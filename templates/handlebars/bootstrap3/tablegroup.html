@@ -1,0 +1,59 @@
+<!-- Table Group-->
+<script id="tablegroup-component-template" type="text/x-handlebars-template">
+    {{#with data}}   
+    <div class="table-group" id="{{fields.id.value}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.showidcol.value}} data-idcol="true"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>        
+        <table class="table{{#if fields.bordered.value}} table-bordered{{/if}}{{#if fields.striped.value}} table-striped{{/if}}">
+            {{#with fields}} 
+            <thead>
+                <tr>
+                    {{#each headings.value}}
+                    <th>{{text}}</th>
+                    {{/each}}
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="table-group-items dropzone"></div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label"></label>
+            <div class="col-sm-8">
+                <button class="btn btn-danger" data-mode="add" data-label="{{buttonlabel.value}}" data-closedlabel="{{buttonclosedlabel.value}}"{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}} onclick="FBRun.tablegroup.btnAction($(this), {{../id}});">{{buttonlabel.value}}</button>
+            </div>
+        </div>
+        {{/with}}
+    {{/with}}
+    </div>
+</script>
+
+<!-- Table Group (Preview)-->
+<script id="tablegroup-preview-component-template" type="text/x-handlebars-template">
+    {{#with data}}   
+    <div class="table-group" id="{{fields.id.value}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.showidcol.value}} data-idcol="true"{{/if}}>        
+        <table class="table{{#if fields.bordered.value}} table-bordered{{/if}}{{#if fields.striped.value}} table-striped{{/if}} hide">
+            {{#with fields}} 
+            <thead>
+                <tr>
+                    {{#each headings.value}}
+                    <th>{{text}}</th>
+                    {{/each}}
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            
+        </table>
+
+        <div class="table-group-items"></div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label"></label>
+            <div class="col-sm-8">
+                <button class="btn btn-danger" data-mode="add" data-label="{{buttonlabel.value}}" data-closedlabel="{{buttonclosedlabel.value}}"{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}} onclick="FBRun.tablegroup.btnAction($(this), {{../id}});">{{buttonlabel.value}}</button>
+            </div>
+        </div>
+        {{/with}}
+    </div>
+    {{/with}}
+</script>

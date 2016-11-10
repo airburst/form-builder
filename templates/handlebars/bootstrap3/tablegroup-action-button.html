@@ -1,0 +1,18 @@
+<!-- Text Input-->
+<script id="tablegroup-actions-template" type="text/x-handlebars-template">
+    {{#with data}}   
+    <td>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default">Action</button>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#" onclick="editTGRow({{row}})">Edit</a></li>
+          <li><a href="#" onclick="deleteTGRow({{row}})">Delete</a></li>
+        </ul>
+      </div>
+    </td>
+    {{/with}}
+</script>

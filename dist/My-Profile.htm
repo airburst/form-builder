@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>My Profile</title>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/jquery-ui.min.css"/>
+        <link rel="stylesheet" href="assets/datepicker/css/datepicker.css"/>
+        <link rel="stylesheet" href="css/spinners.css"/>
+        <link rel="stylesheet" href="css/style.css" media="screen"/>
+        <link rel="stylesheet" href="css/print.css" media="print"/>
+        <!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/ie8.css"/>
+        <script src="js/libs/html5shiv.min.js"></script>
+        <script src="js/libs/respond.min.js"></script>
+        <![endif]-->
+        <!--[if IE]>
+        <script type="text/javascript" src="js/libs/excanvas.js"></script>
+        <![endif]-->
+    </head>
+    <body class="fb-body">
+        <div class="fb-wrapper" id="fb-main">
+            <form role="form" class="form-horizontal form-fb" name="My Profile">
+                <div class="container container-form">
+                    <section class="page" id="p1" data-id="1" name="Create your profile">
+                        <div class="col-md-9 fb-form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="2" data-id="2">
+                                        <label for="Profile_text" class="col-sm-6 control-label"></label>
+                                        <div class="col-sm-12">
+                                            <div id="Profile_text" name="Profile_text" class="form-control-static">
+                                                <p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:17.0pt">
+                                                    <span style="font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#004069;mso-fareast-language:
+EN-GB">Your profile gives you a baseline that will assist you to plan
+for support and services. It grows with you so that you can see the changes in
+your health and well-being over time. 
+                                                        <o:p></o:p>
+                                                    </span>
+                                                </p>
+                                                <p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:17.0pt">
+                                                    <span style="font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#004069;mso-fareast-language:
+EN-GB">Building your profile is easy and it will not take long. 
+                                                        <o:p></o:p>
+                                                    </span>
+                                                </p>
+                                                <p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:17.0pt"></p>
+                                                <p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:17.0pt">
+                                                    <span style="font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#004069;mso-fareast-language:
+EN-GB">The profile is designed to be retaken at regular intervals so that you
+can monitor your progress and consider changes to improve your health and
+well-being.&nbsp;
+                                                        <o:p></o:p>
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row nav-buttons">
+                                <label class="col-sm-4 control-label"></label>
+                                <div class="col-sm-8">
+                                    <button class="btn btn-danger btn-next" onclick="FBRun.nav.moveNext('p1');">Next</button>&nbsp;&nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 sidenav-container">
+                            <div class="row">
+                                <ul class="sidenav">
+                                    <li class="active" data-page="p1">
+                                        <a href="javascript:void(0)" onclick="FBRun.nav.moveTo('p1');">Create your profile</a>
+                                    </li>
+                                    <li class="disabled" data-page="p2">
+                                        <a href="javascript:void(0)">Your Details</a>
+                                    </li>
+                                    <li class="disabled" data-page="p3">
+                                        <a href="javascript:void(0)">How well you move</a>
+                                    </li>
+                                    <li class="disabled" data-page="p4">
+                                        <a href="javascript:void(0)">How well you tackle practical tasks</a>
+                                    </li>
+                                    <li class="disabled" data-page="p5">
+                                        <a href="javascript:void(0)">How well are you feeling</a>
+                                    </li>
+                                    <li class="disabled" data-page="p6">
+                                        <a href="javascript:void(0)">Results</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="page hide" id="p2" data-id="4" name="Your Details">
+                        <div class="col-md-9 fb-form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="Yourdetails_Panel" data-id="5">
+                                        <div class="panel panel-warning">
+                                            <div class="panel-heading">
+                                                <h4>My Profile</h4>
+                                            </div>
+                                            <div class="panel-body">
+                                                <p>Your Details</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="9" data-id="9">
+                                        <label for="First_name" class="col-sm-5 control-label">Given Name *</label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control input-md" id="First_name" name="First_name" type="text" tabindex="1" required="required" data-parsley-group="p2"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="11" data-id="11">
+                                        <label for="Second_name" class="col-sm-5 control-label">Last Name *</label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control input-md" id="Second_name" name="Second_name" type="text" tabindex="2" required="required" data-parsley-group="p2"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="12" data-id="12">
+                                        <label for="Email_address" class="col-sm-5 control-label">Email:</label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control input-md" id="Email_address" name="Email_address" type="text" tabindex="3" data-parsley-type="email" data-parsley-group="p2"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="196" data-id="196">
+                                        <label class="col-sm-5 control-label" for="developedprofile_Radio">Who has developed this profile? *</label>
+                                        <div class="col-sm-5">
+                                            <div class="radio">
+                                                <label for="developedprofile_Radio-0">
+                                                    <input type="radio" name="developedprofile_Radio" id="developedprofile_Radio-0" value="I have developed this profile" tabindex="5" required="required" data-parsley-group="p2" data-parsley-errors-container=".error-container-developedprofile_Radio"/>I have developed this profile
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="developedprofile_Radio-1">
+                                                    <input type="radio" name="developedprofile_Radio" id="developedprofile_Radio-1" value="I was helped to develop this profile" tabindex="5"/>I was helped to develop this profile
+                                                </label>
+                                            </div>
+                                            <div class="error-container-developedprofile_Radio"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group hide" id="198" data-id="198"  data-vis="1">
+                                        <label for="developedprofile_Text" class="col-sm-5 control-label">Name of the person that you helped you</label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control input-md" id="developedprofile_Text" name="developedprofile_Text" type="text" tabindex="6"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="199" data-id="199">
+                                        <label class="col-sm-5 control-label" for="Detailsprofile_Radio">Are these details about you? *</label>
+                                        <div class="col-sm-4">
+                                            <div class="radio">
+                                                <label for="Detailsprofile_Radio-0">
+                                                    <input type="radio" name="Detailsprofile_Radio" id="Detailsprofile_Radio-0" value="These details are about me" tabindex="7" required="required" data-parsley-group="p2" data-parsley-errors-container=".error-container-Detailsprofile_Radio"/>These details are about me
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="Detailsprofile_Radio-1">
+                                                    <input type="radio" name="Detailsprofile_Radio" id="Detailsprofile_Radio-1" value="These details are about someone else" tabindex="7"/>These details are about someone else
+                                                </label>
+                                            </div>
+                                            <div class="error-container-Detailsprofile_Radio"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group hide" id="200" data-id="200"  data-vis="2">
+                                        <label for="Detailsprofile_Text" class="col-sm-5 control-label">Name of the person these details are about</label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control input-md" id="Detailsprofile_Text" name="Detailsprofile_Text" type="text" tabindex="8"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12"></div>
+                            </div>
+                            <div class="row nav-buttons">
+                                <label class="col-sm-4 control-label"></label>
+                                <div class="col-sm-8">
+                                    <button class="btn btn-default btn-back" onclick="FBRun.nav.moveBack('p2');">Back</button>&nbsp;&nbsp;
+                                    <button class="btn btn-danger btn-next" onclick="FBRun.nav.moveNext('p2');">Next</button>&nbsp;&nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 sidenav-container">
+                            <div class="row">
+                                <ul class="sidenav">
+                                    <li class="active" data-page="p1">
+                                        <a href="javascript:void(0)" onclick="FBRun.nav.moveTo('p1');">Create your profile</a>
+                                    </li>
+                                    <li class="disabled" data-page="p2">
+                                        <a href="javascript:void(0)">Your Details</a>
+                                    </li>
+                                    <li class="disabled" data-page="p3">
+                                        <a href="javascript:void(0)">How well you move</a>
+                                    </li>
+                                    <li class="disabled" data-page="p4">
+                                        <a href="javascript:void(0)">How well you tackle practical tasks</a>
+                                    </li>
+                                    <li class="disabled" data-page="p5">
+                                        <a href="javascript:void(0)">How well are you feeling</a>
+                                    </li>
+                                    <li class="disabled" data-page="p6">
+                                        <a href="javascript:void(0)">Results</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="page hide" id="p3" data-id="150" name="How well you move">
+                        <div class="col-md-9 fb-form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="Move_Panel" data-id="151">
+                                        <div class="panel panel-warning">
+                                            <div class="panel-heading">
+                                                <h4>My Profile&nbsp;</h4>
+                                            </div>
+                                            <div class="panel-body">
+                                                <p>How well you move</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="157" data-id="157">
+                                        <div class="alert alert-warning ">
+                                            <div>
+                                                <p>The following questions look at your ability to get around your home and community.&nbsp;
+                                                    <br/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="248" data-id="248">
+                                        <label class="col-sm-3 control-label" for="Move_score1">Move around the house *</label>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline" for="Move_score1-0">
+                                                <input type="radio" name="Move_score1" id="Move_score1-0" value="4" tabindex="14" required="required" data-parsley-group="p3" data-parsley-errors-container=".error-container-Move_score1"/>Manage well
+                                            </label>
+                                            <label class="radio-inline" for="Move_score1-1">
+                                                <input type="radio" name="Move_score1" id="Move_score1-1" value="3" tabindex="14"/>Sometimes need help
+                                            </label>
+                                            <label class="radio-inline" for="Move_score1-2">
+                                                <input type="radio" name="Move_score1" id="Move_score1-2" value="2" tabindex="14"/>Always need help
+                                            </label>
+                                            <label class="radio-inline" for="Move_score1-3">
+                                                <input type="radio" name="Move_score1" id="Move_score1-3" value="1" tabindex="14"/>Unable to do
+                                            </label>
+                                            <div class="error-container-Move_score1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="249" data-id="249">
+                                        <label class="col-sm-3 control-label" for="Move_score2">Get in and out of bed *</label>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline" for="Move_score2-0">
+                                                <input type="radio" name="Move_score2" id="Move_score2-0" value="4" tabindex="15" required="required" data-parsley-group="p3" data-parsley-errors-container=".error-container-Move_score2"/>Manage well
+                                            </label>
+                                            <label class="radio-inline" for="Move_score2-1">
+                                                <input type="radio" name="Move_score2" id="Move_score2-1" value="3" tabindex="15"/>Sometimes need help
+                                            </label>
+                                            <label class="radio-inline" for="Move_score2-2">
+                                                <input type="radio" name="Move_score2" id="Move_score2-2" value="2" tabindex="15"/>Always need help
+                                            </label>
+                                            <label class="radio-inline" for="Move_score2-3">
+                                                <input type="radio" name="Move_score2" id="Move_score2-3" value="1" tabindex="15"/>Unable to do
+                                            </label>
+                                            <div class="error-container-Move_score2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="250" data-id="250">
+                                        <label class="col-sm-3 control-label" for="Move_score3">Use stairs *</label>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline" for="Move_score3-0">
+                                                <input type="radio" name="Move_score3" id="Move_score3-0" value="4" tabindex="16" required="required" data-parsley-group="p3" data-parsley-errors-container=".error-container-Move_score3"/>Manage well
+                                            </label>
+                                            <label class="radio-inline" for="Move_score3-1">
+                                                <input type="radio" name="Move_score3" id="Move_score3-1" value="3" tabindex="16"/>Sometimes need help
+                                            </label>
+                                            <label class="radio-inline" for="Move_score3-2">
+                                                <input type="radio" name="Move_score3" id="Move_score3-2" value="2" tabindex="16"/>Always need help
+                                            </label>
+                                            <label class="radio-inline" for="Move_score3-3">
+                                                <input type="radio" name="Move_score3" id="Move_score3-3" value="1" tabindex="16"/>Unable to do
+                                            </label>
+                                            <div class="error-container-Move_score3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="251" data-id="251">
+                                        <label class="col-sm-3 control-label" for="Move_score4">Go to shops/GP/Hospital *</label>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline" for="Move_score4-0">
+                                                <input type="radio" name="Move_score4" id="Move_score4-0" value="4" tabindex="17" required="required" data-parsley-group="p3" data-parsley-errors-container=".error-container-Move_score4"/>Manage well
+                                            </label>
+                                            <label class="radio-inline" for="Move_score4-1">
+                                                <input type="radio" name="Move_score4" id="Move_score4-1" value="3" tabindex="17"/>Sometimes need help
+                                            </label>
+                                            <label class="radio-inline" for="Move_score4-2">
+                                                <input type="radio" name="Move_score4" id="Move_score4-2" value="2" tabindex="17"/>Always need help
+                                            </label>
+                                            <label class="radio-inline" for="Move_score4-3">
+                                                <input type="radio" name="Move_score4" id="Move_score4-3" value="1" tabindex="17"/>Unable to do
+                                            </label>
+                                            <div class="error-container-Move_score4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="252" data-id="252">
+                                        <label class="col-sm-3 control-label" for="Move_score5">Get in and out of cars/buses/trains *</label>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline" for="Move_score5-0">
+                                                <input type="radio" name="Move_score5" id="Move_score5-0" value="4" tabindex="18" required="required" data-parsley-group="p3" data-parsley-errors-container=".error-container-Move_score5"/>Manage well
+                                            </label>
+                                            <label class="radio-inline" for="Move_score5-1">
+                                                <input type="radio" name="Move_score5" id="Move_score5-1" value="3" tabindex="18"/>Sometimes need help
+                                            </label>
+                                            <label class="radio-inline" for="Move_score5-2">
+                                                <input type="radio" name="Move_score5" id="Move_score5-2" value="2" tabindex="18"/>Always need help
+                                            </label>
+                                            <label class="radio-inline" for="Move_score5-3">
+                                                <input type="radio" name="Move_score5" id="Move_score5-3" value="1" tabindex="18"/>Unable to do
+                                            </label>
+                                            <div class="error-container-Move_score5"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="253" data-id="253">
+                                        <label class="col-sm-3 control-label" for="Move_score6">Do you use mobility aids or equipment? *</label>
+                                        <div class="col-sm-2">
+                                            <label class="radio-inline" for="Move_score6-0">
+                                                <input type="radio" name="Move_score6" id="Move_score6-0" value="2" tabindex="19" required="required" data-parsley-group="p3" data-parsley-errors-container=".error-container-Move_score6"/>Yes
+                                            </label>
+                                            <label class="radio-inline" for="Move_score6-1">
+                                                <input type="radio" name="Move_score6" id="Move_score6-1" value="1" tabindex="19"/>No
+                                            </label>
+                                            <div class="error-container-Move_score6"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row nav-buttons">
+                                <label class="col-sm-4 control-label"></label>
+                                <div class="col-sm-8">
+                                    <button class="btn btn-default btn-back" onclick="FBRun.nav.moveBack('p3');">Back</button>&nbsp;&nbsp;
+                                    <button class="btn btn-danger btn-next" onclick="FBRun.nav.moveNext('p3');">Next</button>&nbsp;&nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 sidenav-container">
+                            <div class="row">
+                                <ul class="sidenav">
+                                    <li class="active" data-page="p1">
+                                        <a href="javascript:void(0)" onclick="FBRun.nav.moveTo('p1');">Create your profile</a>
+                                    </li>
+                                    <li class="disabled" data-page="p2">
+                                        <a href="javascript:void(0)">Your Details</a>
+                                    </li>
+                                    <li class="disabled" data-page="p3">
+                                        <a href="javascript:void(0)">How well you move</a>
+                                    </li>
+                                    <li class="disabled" data-page="p4">
+                                        <a href="javascript:void(0)">How well you tackle practical tasks</a>
+                                    </li>
+                                    <li class="disabled" data-page="p5">
+                                        <a href="javascript:void(0)">How well are you feeling</a>
+                                    </li>
+                                    <li class="disabled" data-page="p6">
+                                        <a href="javascript:void(0)">Results</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="page hide" id="p4" data-id="166" name="How well you tackle practical tasks">
+                        <div class="col-md-9 fb-form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="Tasks_Panel" data-id="167">
+                                        <div class="panel panel-warning">
+                                            <div class="panel-heading">
+                                                <h4>My Profile</h4>
+                                            </div>
+                                            <div class="panel-body">
+                                                <p>How well you tackle practical tasks</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="168" data-id="168">
+                                        <div class="alert alert-warning ">
+                                            <div>
+                                                <p>The following questions look at your ability to do some important practical things. Please let us know how well you are able to do the following things by choosing an option from the drop down lists.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="256" data-id="256">
+                                        <label class="col-sm-3 control-label" for="Tasks_score1">Preparing meals *</label>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline" for="Tasks_score1-0">
+                                                <input type="radio" name="Tasks_score1" id="Tasks_score1-0" value="4" tabindex="20" required="required" data-parsley-group="p4" data-parsley-errors-container=".error-container-Tasks_score1"/>Manage well
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score1-1">
+                                                <input type="radio" name="Tasks_score1" id="Tasks_score1-1" value="3" tabindex="20"/>Sometimes need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score1-2">
+                                                <input type="radio" name="Tasks_score1" id="Tasks_score1-2" value="2" tabindex="20"/>Always need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score1-3">
+                                                <input type="radio" name="Tasks_score1" id="Tasks_score1-3" value="1" tabindex="20"/>Unable to do
+                                            </label>
+                                            <div class="error-container-Tasks_score1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="257" data-id="257">
+                                        <label class="col-sm-3 control-label" for="Tasks_score2">Do housework *</label>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline" for="Tasks_score2-0">
+                                                <input type="radio" name="Tasks_score2" id="Tasks_score2-0" value="4" tabindex="21" required="required" data-parsley-group="p4" data-parsley-errors-container=".error-container-Tasks_score2"/>Manage well
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score2-1">
+                                                <input type="radio" name="Tasks_score2" id="Tasks_score2-1" value="3" tabindex="21"/>Sometimes need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score2-2">
+                                                <input type="radio" name="Tasks_score2" id="Tasks_score2-2" value="2" tabindex="21"/>Always need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score2-3">
+                                                <input type="radio" name="Tasks_score2" id="Tasks_score2-3" value="1" tabindex="21"/>Unable to do
+                                            </label>
+                                            <div class="error-container-Tasks_score2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="258" data-id="258">
+                                        <label class="col-sm-3 control-label" for="Tasks_score3">Shopping *</label>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline" for="Tasks_score3-0">
+                                                <input type="radio" name="Tasks_score3" id="Tasks_score3-0" value="4" tabindex="22" required="required" data-parsley-group="p4" data-parsley-errors-container=".error-container-Tasks_score3"/>Manage well
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score3-1">
+                                                <input type="radio" name="Tasks_score3" id="Tasks_score3-1" value="3" tabindex="22"/>Sometimes need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score3-2">
+                                                <input type="radio" name="Tasks_score3" id="Tasks_score3-2" value="2" tabindex="22"/>Always need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score3-3">
+                                                <input type="radio" name="Tasks_score3" id="Tasks_score3-3" value="1" tabindex="22"/>Unable to do
+                                            </label>
+                                            <div class="error-container-Tasks_score3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="259" data-id="259">
+                                        <label class="col-sm-3 control-label" for="Tasks_score4">Maintain your home *</label>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline" for="Tasks_score4-0">
+                                                <input type="radio" name="Tasks_score4" id="Tasks_score4-0" value="4" tabindex="23" required="required" data-parsley-group="p4" data-parsley-errors-container=".error-container-Tasks_score4"/>Manage well
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score4-1">
+                                                <input type="radio" name="Tasks_score4" id="Tasks_score4-1" value="3" tabindex="23"/>Sometimes need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score4-2">
+                                                <input type="radio" name="Tasks_score4" id="Tasks_score4-2" value="2" tabindex="23"/>Always need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score4-3">
+                                                <input type="radio" name="Tasks_score4" id="Tasks_score4-3" value="1" tabindex="23"/>Unable to do
+                                            </label>
+                                            <div class="error-container-Tasks_score4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="260" data-id="260">
+                                        <label class="col-sm-3 control-label" for="Tasks_score5">Dress yourself *</label>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline" for="Tasks_score5-0">
+                                                <input type="radio" name="Tasks_score5" id="Tasks_score5-0" value="4" tabindex="24" required="required" data-parsley-group="p4" data-parsley-errors-container=".error-container-Tasks_score5"/>Manage well
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score5-1">
+                                                <input type="radio" name="Tasks_score5" id="Tasks_score5-1" value="3" tabindex="24"/>Sometimes need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score5-2">
+                                                <input type="radio" name="Tasks_score5" id="Tasks_score5-2" value="2" tabindex="24"/>Always need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score5-3">
+                                                <input type="radio" name="Tasks_score5" id="Tasks_score5-3" value="1" tabindex="24"/>Unable to do
+                                            </label>
+                                            <div class="error-container-Tasks_score5"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="262" data-id="262">
+                                        <label class="col-sm-3 control-label" for="Tasks_score6">Wash your hair *</label>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline" for="Tasks_score6-0">
+                                                <input type="radio" name="Tasks_score6" id="Tasks_score6-0" value="4" tabindex="25" required="required" data-parsley-group="p4" data-parsley-errors-container=".error-container-Tasks_score6"/>Manage well
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score6-1">
+                                                <input type="radio" name="Tasks_score6" id="Tasks_score6-1" value="3" tabindex="25"/>Sometimes need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score6-2">
+                                                <input type="radio" name="Tasks_score6" id="Tasks_score6-2" value="2" tabindex="25"/>Always need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score6-3">
+                                                <input type="radio" name="Tasks_score6" id="Tasks_score6-3" value="1" tabindex="25"/>Unable to do
+                                            </label>
+                                            <div class="error-container-Tasks_score6"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="266" data-id="266">
+                                        <label class="col-sm-3 control-label" for="Tasks_score7">Shave yourself *</label>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline" for="Tasks_score7-0">
+                                                <input type="radio" name="Tasks_score7" id="Tasks_score7-0" value="4" tabindex="29" required="required" data-parsley-group="p4" data-parsley-errors-container=".error-container-Tasks_score7"/>Manage well
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score7-1">
+                                                <input type="radio" name="Tasks_score7" id="Tasks_score7-1" value="3" tabindex="29"/>Sometimes need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score7-2">
+                                                <input type="radio" name="Tasks_score7" id="Tasks_score7-2" value="2" tabindex="29"/>Always need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score7-3">
+                                                <input type="radio" name="Tasks_score7" id="Tasks_score7-3" value="1" tabindex="29"/>Unable to do
+                                            </label>
+                                            <div class="error-container-Tasks_score7"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="263" data-id="263">
+                                        <label class="col-sm-3 control-label" for="Tasks_score8">Use the bath/shower/toilet *</label>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline" for="Tasks_score8-0">
+                                                <input type="radio" name="Tasks_score8" id="Tasks_score8-0" value="4" tabindex="27" required="required" data-parsley-group="p4" data-parsley-errors-container=".error-container-Tasks_score8"/>Manage well
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score8-1">
+                                                <input type="radio" name="Tasks_score8" id="Tasks_score8-1" value="3" tabindex="27"/>Sometimes need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score8-2">
+                                                <input type="radio" name="Tasks_score8" id="Tasks_score8-2" value="2" tabindex="27"/>Always need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score8-3">
+                                                <input type="radio" name="Tasks_score8" id="Tasks_score8-3" value="1" tabindex="27"/>Unable to do
+                                            </label>
+                                            <div class="error-container-Tasks_score8"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="264" data-id="264">
+                                        <label class="col-sm-3 control-label" for="Tasks_score9">Order/collect perscriptions *</label>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline" for="Tasks_score9-0">
+                                                <input type="radio" name="Tasks_score9" id="Tasks_score9-0" value="4" tabindex="28" required="required" data-parsley-group="p4" data-parsley-errors-container=".error-container-Tasks_score9"/>Manage well
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score9-1">
+                                                <input type="radio" name="Tasks_score9" id="Tasks_score9-1" value="3" tabindex="28"/>Sometimes need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score9-2">
+                                                <input type="radio" name="Tasks_score9" id="Tasks_score9-2" value="2" tabindex="28"/>Always need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score9-3">
+                                                <input type="radio" name="Tasks_score9" id="Tasks_score9-3" value="1" tabindex="28"/>Unable to do
+                                            </label>
+                                            <div class="error-container-Tasks_score9"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="265" data-id="265">
+                                        <label class="col-sm-3 control-label" for="Tasks_score10">Take medication *</label>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline" for="Tasks_score10-0">
+                                                <input type="radio" name="Tasks_score10" id="Tasks_score10-0" value="4" tabindex="29" required="required" data-parsley-group="p4" data-parsley-errors-container=".error-container-Tasks_score10"/>Manage well
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score10-1">
+                                                <input type="radio" name="Tasks_score10" id="Tasks_score10-1" value="3" tabindex="29"/>Sometimes need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score10-2">
+                                                <input type="radio" name="Tasks_score10" id="Tasks_score10-2" value="2" tabindex="29"/>Always need help
+                                            </label>
+                                            <label class="radio-inline" for="Tasks_score10-3">
+                                                <input type="radio" name="Tasks_score10" id="Tasks_score10-3" value="1" tabindex="29"/>Unable to do
+                                            </label>
+                                            <div class="error-container-Tasks_score10"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row nav-buttons">
+                                <label class="col-sm-4 control-label"></label>
+                                <div class="col-sm-8">
+                                    <button class="btn btn-default btn-back" onclick="FBRun.nav.moveBack('p4');">Back</button>&nbsp;&nbsp;
+                                    <button class="btn btn-danger btn-next" onclick="FBRun.nav.moveNext('p4');">Next</button>&nbsp;&nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 sidenav-container">
+                            <div class="row">
+                                <ul class="sidenav">
+                                    <li class="active" data-page="p1">
+                                        <a href="javascript:void(0)" onclick="FBRun.nav.moveTo('p1');">Create your profile</a>
+                                    </li>
+                                    <li class="disabled" data-page="p2">
+                                        <a href="javascript:void(0)">Your Details</a>
+                                    </li>
+                                    <li class="disabled" data-page="p3">
+                                        <a href="javascript:void(0)">How well you move</a>
+                                    </li>
+                                    <li class="disabled" data-page="p4">
+                                        <a href="javascript:void(0)">How well you tackle practical tasks</a>
+                                    </li>
+                                    <li class="disabled" data-page="p5">
+                                        <a href="javascript:void(0)">How well are you feeling</a>
+                                    </li>
+                                    <li class="disabled" data-page="p6">
+                                        <a href="javascript:void(0)">Results</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="page hide" id="p5" data-id="179" name="How well are you feeling">
+                        <div class="col-md-9 fb-form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="Feeling_Panel" data-id="180">
+                                        <div class="panel panel-warning">
+                                            <div class="panel-heading">
+                                                <h4>My Profile</h4>
+                                            </div>
+                                            <div class="panel-body">
+                                                <p>How well are you feeling</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="181" data-id="181">
+                                        <div class="alert alert-warning ">
+                                            <div>
+                                                <p>
+                                                    <span style="line-height: 1.42857143;">The following questions look at issues that effect your feelings and emotions.&nbsp;</span>
+                                                    <span style="line-height: 1.42857143;">Please choose an option from the drop down lists.</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="242" data-id="242">
+                                        <label class="col-sm-4 control-label" for="Feelings_score1">Links with family or relatives *</label>
+                                        <div class="col-sm-8">
+                                            <label class="radio-inline" for="Feelings_score1-0">
+                                                <input type="radio" name="Feelings_score1" id="Feelings_score1-0" value="4" tabindex="10" required="required" data-parsley-group="p5" data-parsley-errors-container=".error-container-Feelings_score1"/>Strong
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score1-1">
+                                                <input type="radio" name="Feelings_score1" id="Feelings_score1-1" value="3" tabindex="10"/>Acceptable
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score1-2">
+                                                <input type="radio" name="Feelings_score1" id="Feelings_score1-2" value="2" tabindex="10"/>Weak
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score1-3">
+                                                <input type="radio" name="Feelings_score1" id="Feelings_score1-3" value="1" tabindex="10"/>None
+                                            </label>
+                                            <div class="error-container-Feelings_score1"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="243" data-id="243">
+                                        <label class="col-sm-4 control-label" for="Feelings_score2">Links with friends *</label>
+                                        <div class="col-sm-8">
+                                            <label class="radio-inline" for="Feelings_score2-0">
+                                                <input type="radio" name="Feelings_score2" id="Feelings_score2-0" value="4" tabindex="10" required="required" data-parsley-group="p5" data-parsley-errors-container=".error-container-Feelings_score2"/>Strong
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score2-1">
+                                                <input type="radio" name="Feelings_score2" id="Feelings_score2-1" value="3" tabindex="10"/>Acceptable
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score2-2">
+                                                <input type="radio" name="Feelings_score2" id="Feelings_score2-2" value="2" tabindex="10"/>Weak
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score2-3">
+                                                <input type="radio" name="Feelings_score2" id="Feelings_score2-3" value="1" tabindex="10"/>None
+                                            </label>
+                                            <div class="error-container-Feelings_score2"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="244" data-id="244">
+                                        <label class="col-sm-4 control-label" for="Feelings_score3">Links with your community *</label>
+                                        <div class="col-sm-8">
+                                            <label class="radio-inline" for="Feelings_score3-0">
+                                                <input type="radio" name="Feelings_score3" id="Feelings_score3-0" value="4" tabindex="10" required="required" data-parsley-group="p5" data-parsley-errors-container=".error-container-Feelings_score3"/>Strong
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score3-1">
+                                                <input type="radio" name="Feelings_score3" id="Feelings_score3-1" value="3" tabindex="10"/>Acceptable
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score3-2">
+                                                <input type="radio" name="Feelings_score3" id="Feelings_score3-2" value="2" tabindex="10"/>Weak
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score3-3">
+                                                <input type="radio" name="Feelings_score3" id="Feelings_score3-3" value="1" tabindex="10"/>None
+                                            </label>
+                                            <div class="error-container-Feelings_score3"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="245" data-id="245">
+                                        <label class="col-sm-4 control-label" for="Feelings_score4">Overall money resources *</label>
+                                        <div class="col-sm-8">
+                                            <label class="radio-inline" for="Feelings_score4-0">
+                                                <input type="radio" name="Feelings_score4" id="Feelings_score4-0" value="4" tabindex="11" required="required" data-parsley-group="p5" data-parsley-errors-container=".error-container-Feelings_score4"/>Strong
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score4-1">
+                                                <input type="radio" name="Feelings_score4" id="Feelings_score4-1" value="3" tabindex="11"/>Acceptable
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score4-2">
+                                                <input type="radio" name="Feelings_score4" id="Feelings_score4-2" value="2" tabindex="11"/>Weak
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score4-3">
+                                                <input type="radio" name="Feelings_score4" id="Feelings_score4-3" value="1" tabindex="11"/>None
+                                            </label>
+                                            <div class="error-container-Feelings_score4"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="246" data-id="246">
+                                        <label class="col-sm-4 control-label" for="Feelings_score5">Ability to make decisions *</label>
+                                        <div class="col-sm-8">
+                                            <label class="radio-inline" for="Feelings_score5-0">
+                                                <input type="radio" name="Feelings_score5" id="Feelings_score5-0" value="4" tabindex="12" required="required" data-parsley-group="p5" data-parsley-errors-container=".error-container-Feelings_score5"/>Strong
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score5-1">
+                                                <input type="radio" name="Feelings_score5" id="Feelings_score5-1" value="3" tabindex="12"/>Acceptable
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score5-2">
+                                                <input type="radio" name="Feelings_score5" id="Feelings_score5-2" value="2" tabindex="12"/>Weak
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score5-3">
+                                                <input type="radio" name="Feelings_score5" id="Feelings_score5-3" value="1" tabindex="12"/>None
+                                            </label>
+                                            <div class="error-container-Feelings_score5"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="247" data-id="247">
+                                        <label class="col-sm-4 control-label" for="Feelings_score6">Attitude to the future *</label>
+                                        <div class="col-sm-8">
+                                            <label class="radio-inline" for="Feelings_score6-0">
+                                                <input type="radio" name="Feelings_score6" id="Feelings_score6-0" value="4" tabindex="13" required="required" data-parsley-group="p5" data-parsley-errors-container=".error-container-Feelings_score6"/>Strong
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score6-1">
+                                                <input type="radio" name="Feelings_score6" id="Feelings_score6-1" value="3" tabindex="13"/>Acceptable
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score6-2">
+                                                <input type="radio" name="Feelings_score6" id="Feelings_score6-2" value="2" tabindex="13"/>Weak
+                                            </label>
+                                            <label class="radio-inline" for="Feelings_score6-3">
+                                                <input type="radio" name="Feelings_score6" id="Feelings_score6-3" value="1" tabindex="13"/>None
+                                            </label>
+                                            <div class="error-container-Feelings_score6"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row nav-buttons">
+                                <label class="col-sm-4 control-label"></label>
+                                <div class="col-sm-8">
+                                    <button class="btn btn-default btn-back" onclick="FBRun.nav.moveBack('p5');">Back</button>&nbsp;&nbsp;
+                                    <button class="btn btn-danger btn-next" onclick="FBRun.nav.moveNext('p5'); makeChart();;">Next</button>&nbsp;&nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 sidenav-container">
+                            <div class="row">
+                                <ul class="sidenav">
+                                    <li class="active" data-page="p1">
+                                        <a href="javascript:void(0)" onclick="FBRun.nav.moveTo('p1');">Create your profile</a>
+                                    </li>
+                                    <li class="disabled" data-page="p2">
+                                        <a href="javascript:void(0)">Your Details</a>
+                                    </li>
+                                    <li class="disabled" data-page="p3">
+                                        <a href="javascript:void(0)">How well you move</a>
+                                    </li>
+                                    <li class="disabled" data-page="p4">
+                                        <a href="javascript:void(0)">How well you tackle practical tasks</a>
+                                    </li>
+                                    <li class="disabled" data-page="p5">
+                                        <a href="javascript:void(0)">How well are you feeling</a>
+                                    </li>
+                                    <li class="disabled" data-page="p6">
+                                        <a href="javascript:void(0)">Results</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="page hide" id="p6" data-id="240" name="Results">
+                        <div class="col-md-9 fb-form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="241" data-id="241">
+                                        <label for="statictext2" class="hide control-label"></label>
+                                        <div class="col-sm-12">
+                                            <div id="statictext2" name="statictext2" class="form-control-static">
+                                                <h3>Results</h3>
+                                                <div style='width: 100%'>
+                                                    <canvas id='canvas' height='400px' width='600px'></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row nav-buttons">
+                                <label class="col-sm-4 control-label"></label>
+                                <div class="col-sm-8">
+                                    <button class="btn btn-default btn-back" onclick="FBRun.nav.moveBack('p6');">Back</button>&nbsp;&nbsp;
+                                    <button class="btn btn-danger btn-submit" onclick="FBRun.nav.submitAction('p6');">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 sidenav-container">
+                            <div class="row">
+                                <ul class="sidenav">
+                                    <li class="active" data-page="p1">
+                                        <a href="javascript:void(0)" onclick="FBRun.nav.moveTo('p1');">Create your profile</a>
+                                    </li>
+                                    <li class="disabled" data-page="p2">
+                                        <a href="javascript:void(0)">Your Details</a>
+                                    </li>
+                                    <li class="disabled" data-page="p3">
+                                        <a href="javascript:void(0)">How well you move</a>
+                                    </li>
+                                    <li class="disabled" data-page="p4">
+                                        <a href="javascript:void(0)">How well you tackle practical tasks</a>
+                                    </li>
+                                    <li class="disabled" data-page="p5">
+                                        <a href="javascript:void(0)">How well are you feeling</a>
+                                    </li>
+                                    <li class="disabled" data-page="p6">
+                                        <a href="javascript:void(0)">Results</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </form>
+        </div>
+        <div class="spinner-container"></div>
+        <script src="js/libs/jquery-1.11.1.min.js"></script>
+        <script src="js/libs/jquery-ui.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/datepicker/js/bootstrap-datepicker.js"></script>
+        <script src="js/libs/bootbox.js"></script>
+        <script src="js/libs/parsley.js"></script>
+        <script src="js/formbuilder.min.6e06d985.js?mode=bootstrap3"></script>
+        <script>$('button').click(function(e){e.preventDefault();e.stopPropagation();}); $('ul.sidenav li a').click(function(e){e.preventDefault();});FBRun.dates.applyDatePickers(); $('.helptext').popover(); </script>
+        <script>var vis = {"rules":[{"id":1,"name":"Who has developed this profile","rule":"(V(196) == \"I was helped to develop this profile\")"},{"id":2,"name":"Are these details about you","rule":"(V(199) == \"These details are about someone else\")"}],"triggers":[{"cid":"196","rid":1},{"cid":"199","rid":2}]}; FBRun.vis.init();</script>
+        <script>function barColour(value) {
+    "use strict";
+    switch (value) {
+    case "4":
+        return "#558b2f";   /*green*/
+    case "3":
+        return "#ffee58";   /*yellow*/
+    case "2":
+        return "#f5a816";   /*orange*/
+    case "1":
+        return "#ff5722";   /*red*/
+    default:
+        return false;
+    }
+}
+
+function makeChart() {
+    var labels = [],
+        answers = [],
+        dataSet,
+        ctx;
+
+    $.each(FBRun.inputs(), function (k, v) {
+        if (v.name.indexOf("_score") > -1) {
+            answers.push(v.val);
+            labels.push(v.label);
+        }
+    });
+
+    dataSet = {
+        labels: labels,
+        datasets: [
+            {
+                label: "My Needs",
+                fillColor: "rgba(220,220,220,0.5)",
+                strokeColor: "rgba(220,220,220,0.8)",
+                highlightFill: "rgba(220,220,220,0.75)",
+                highlightStroke: "rgba(220,220,220,1)",
+                data: answers
+            }
+        ]
+    };
+
+    ctx = document.getElementById("canvas").getContext("2d");
+    window.myBar = new Chart(ctx).Bar(dataSet, {
+        responsive : true
+    });
+
+    // Change colours based upon value
+    $.each(myBar.datasets[0].bars, function (k, v) {
+        if (barColour(v.value)) { v.fillColor = barColour(v.value); }
+    });
+    myBar.update();
+}</script>
+    </body>
+</html>

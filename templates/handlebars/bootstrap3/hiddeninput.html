@@ -1,0 +1,26 @@
+<!-- Text Input - Designer-->
+<script id="hiddeninput-component-template" type="text/x-handlebars-template">
+    {{#with data}}           
+    <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+        {{#with fields}}
+        <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label"></label>
+        <div class="{{#if inputsize.selectedvalue}}col-sm-{{inputsize.selectedvalue}}{{/if}}">
+            <input class="form-control hidden-control input-md" id="{{id.value}}" name="{{id.value}}" type="text"{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}} value="{{value.value}}"/>
+        </div>
+        {{/with}}
+    </div>
+    {{/with}}
+</script>
+
+<!-- Text Input - Preview-->
+<script id="hiddeninput-preview-component-template" type="text/x-handlebars-template">
+    {{#with data}}           
+    <div id="{{id}}" data-id="{{id}}"{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+        {{#with fields}}
+        <div>
+            <input class="form-control input-md" id="{{id.value}}" name="{{id.value}}" type="hidden"{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}} value="{{value.value}}"/>
+        </div>
+        {{/with}}
+    </div>
+    {{/with}}
+</script>

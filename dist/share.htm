@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Collaboration</title>
+    <link rel="stylesheet" href="css/main.min.17cd314d.css" />
+    <style>
+        .status { 
+            font-color: black;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Body -->
+    <div class="container">
+        <h1>Real-time collaboration</h1>
+        <textarea rows="20" class="form-control" id="pad" disabled></textarea>
+        <div class="status" id="status">Connection status: </div>
+    </div>
+
+    <script src="js/libs/jquery-1.11.1.min.js" charset="utf-8"></script>
+    <script src="assets/ace/ace.js" charset="utf-8"></script>
+
+    <script src="http://localhost:8000/channel/bcsocket.js"></script> 
+    <script src="http://localhost:8000/share/share.js"></script>
+    <script src="http://localhost:8000/share/textarea.js"></script>
+
+    <script>
+    $(document).ready(function () {
+
+        var elem = document.getElementById("pad");
+
+        var connection = sharejs.open("blag", "text", "http://localhost:8000/channel", function (error, doc) {
+            if (error) {
+                console.log(error);
+            }
+            else {
+                elem.disabled = false;
+                doc.attach_textarea(elem);
+            }
+        });
+
+        // *** Connection status display
+        var $status = $(".status");
+        var register = function (state, className, text) {
+            connection.on(state, function () {
+                $status.addClass(className);
+                $status.text($status.text() + text);
+            });
+        };
+
+        register("ok", "success", "Online");
+        register("connecting", "warning", "Connecting...");
+        register("disconnected", "important", "Offline");
+        register("stopped", "important", "Error");
+
+    });
+    </script>
+</body>
+</html>

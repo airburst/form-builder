@@ -1,0 +1,46 @@
+<!-- Rule Item -->
+<script id="rule-item-template" type="text/x-handlebars-template">
+  {{#with data}}
+  <form role="form" class="form-inline margin-bottom" data-ruleitem="{{rule}}">  
+    <div class="form-group">
+      <label class="sr-only" for="rule-left-{{rule}}">Control</label>
+      <select class="form-control" id="rule-left-{{rule}}">
+        <option></option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="rule-operator-{{rule}}">Operator</label>
+      <select class="form-control" id="rule-operator-{{rule}}">
+        <option value=" < ">&lt;</option>
+        <option value=" <= ">&lt;=</option>
+        <option value=" == ">=</option>
+        <option value=" >= ">&gt;=</option>
+        <option value=" > ">&gt;</option>
+        <option value=" != ">!=</option>
+        <option value=" Contains ">Contains</option>
+        <option value=" Does not contain ">Does not contain</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="rule-right-{{rule}}">Value</label>
+      <input class="form-control" type="text" id="rule-right-{{rule}}"/>   
+      <select class="form-control hide" type="text" id="rule-right-list-{{rule}}"></select>
+    </div>
+
+    <div class="form-group">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" id="rule-btn-{{rule}}" onclick="FB.rulebuilder.addRuleItem({{rule}}, 'Done'{{#if mode}}, '{{mode}}'{{/if}});">Done</button>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#" onclick="FB.rulebuilder.addRuleItem({{rule}}, 'OR'{{#if mode}}, '{{mode}}'{{/if}});">OR</a></li>
+          <li><a href="#" onclick="FB.rulebuilder.addRuleItem({{rule}}, 'AND'{{#if mode}}, '{{mode}}'{{/if}});">AND</a></li>
+          <li><a href="#" onclick="FB.rulebuilder.removeRuleItem({{rule}}{{#if mode}}, '{{mode}}'{{/if}});">Remove</a></li>
+        </ul>
+      </div>
+    </div>
+  </form>
+  {{/with}}
+</script>

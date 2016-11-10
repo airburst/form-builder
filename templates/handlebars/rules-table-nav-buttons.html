@@ -1,0 +1,10 @@
+<!-- Rule Item -->
+<script id="rules-table-nav-buttons-template" type="text/x-handlebars-template">
+  {{#with data}}
+    <div class="form-group">
+      <button type="button" class="btn btn-default" onclick="FB.rulebuilder.showRulesTable();">Back to Rules</button>
+      {{#if save}}<button type="button" class="btn btn-danger" onclick="FB.rulebuilder.saveRule();">Save Rule</button>{{/if}}
+      {{#if update}}<button type="button" class="btn btn-danger" onclick="FB.rulebuilder.updateRule({{rule}});">Update Rule</button>{{/if}}
+    </div>
+  {{/with}}
+</script>

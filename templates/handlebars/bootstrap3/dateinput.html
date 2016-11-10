@@ -1,0 +1,18 @@
+<!-- Date -->
+<script id="dateinput-component-template" type="text/x-handlebars-template">
+    {{#with data}}           
+    <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+        {{#with fields}}
+        <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label">{{label.value}}{{#if data-parsley-required.value}} *{{/if}}</label>
+        <div class="{{#if inputsize.selectedvalue}}col-sm-{{inputsize.selectedvalue}}{{else}}hide{{/if}}">
+            <input id="{{id.value}}" name="{{id.value}}" type="text"{{#if placeholder.value}} placeholder="{{placeholder.value}}"{{/if}} class="form-control input-md datepicker{{#if constraint.selectedvalue}}{{constraint.selectedvalue}}{{/if}}" {{#if tabindex.value}}tabindex="{{tabindex.value}}"{{/if}}{{#if data-parsley-required.value}} required="required"{{/if}}{{#if data-parsley-type.selectedvalue}} data-parsley-type="{{data-parsley-type.selectedvalue}}"{{/if}}{{#if data-parsley-pattern.value}} data-parsley-pattern="{{data-parsley-pattern.value}}"{{/if}}{{#if data-parsley-min.value}} data-parsley-min="{{data-parsley-min.value}}"{{/if}}{{#if data-parsley-max.value}} data-parsley-max="{{data-parsley-max.value}}"{{/if}}{{#if data-parsley-minlength.value}} data-parsley-minlength="{{data-parsley-minlength.value}}"{{/if}}{{#if data-parsley-maxlength.value}} data-parsley-maxlength="{{data-parsley-maxlength.value}}"{{/if}}{{#if data-parsley-group.value}} data-parsley-group="{{data-parsley-group.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}/>
+            {{#if helptext.value.length}}<span class="help-block">{{helptext.value}}</span>{{/if}}
+        </div>
+        {{#if helptext.value.length}}<div><span class="has-popover">
+            <span class="helptext" data-container="body" data-toggle="popover" data-placement="top" data-content="{{helptext.value}}" data-trigger="hover" data-original-title="{{helptitle.value}}">{{helplink.value}}</span>
+        </span></div>
+        {{/if}}
+        {{/with}}
+    </div>
+    {{/with}}
+</script>

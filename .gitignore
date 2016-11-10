@@ -1,0 +1,6 @@
+Thumbs.db
+*.exe
+node_modules/
+examples/
+releases/
+care-cap.zip

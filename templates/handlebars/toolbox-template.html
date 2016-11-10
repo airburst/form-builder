@@ -1,0 +1,25 @@
+<!-- Toolbox -->
+<script id="toolbox-template" type="text/x-handlebars-template">
+    <div class="panel-group" id="accordion">
+        {{#each tools}}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{@index}}">
+                        {{title}}
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse{{@index}}" class="panel-collapse collapse">
+                <div class="panel-body">
+                    {{#each controls}}
+                    <div class="tool" draggable="true" data-title="{{title}}" data-section="{{../title}}"{{#if name}} data-name="{{name}}"{{/if}}>
+                        <p>{{title}}</p>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</script>

@@ -1,0 +1,238 @@
+Issue with nested #form-zone in markup
+
+Fixed bug where empty pages did not update defId on import.
+
+
+V 0.7.6
+- Fixed bug in integration adaptors so that options can be set on instantiation.
+- Created Calc Button V2, with &.Calculon2 adaptor.
+
+V 0.7.5
+- Added support for ChartsJS.  Removed chartist.js.
+- Added ability to set Hub Assessment Id in form.
+
+V 0.7.4
+- Added chartist.js library to assets so that we can support charts.
+- Changed calculon integration adaptor so that checkbox lists do not send values (v1.3 Calc Engine cannot handle them).
+- Change localStorage and calculon adaptors to improve callback handling.
+
+
+V 0.7.3
+- You can no longer open files with a newer version that your Form Builder app.
+- Fixed bug in FBRun.vis.castValue(); now correctly casts numbers and strings used in vis rules.
+- Fixed bug which prevented Preview Submit button from showing recorded values.  FBRun.inputs() working.
+
+
+V 0.7.1
+- Added features to support integration in MyLife:
+ -  Added data-event-integration input, to store system name.  Added to updater.js.
+ -  Added data-event-integration into all bootstrap3 templates.
+ -  localStorage.getInputs() and parseInputs() creates id, text, value, label and integration id array (so that MyLife can subsequently send a message).
+
+
+V 0.7.0
+- Refactored form-functions.js and visibility.js into modules:
+
+	runtime.js					FBRun
+	runtime.nav.js				FBRun.nav
+	runtime.tablegroup.js		FBRun.tablegroup
+	runtime.visibility.js		FBRun.vis (note: 'vis' remains a global object at runtime)
+	runtime.events.js			FBRun.events
+	runtime.dates.js			FBRun.dates
+	runtime.init.js				(FRBrun initialisation)
+	
+- Moved all utility methods into FB.utils.  This module is now used by both the builder app and the runtime.
+- Visibility rules can now be cascaded and evaluated without blanking hidden values.  Set the option by initialising visibility with FBR.vis.init({blankHiddenControls: false});  Default is true, i.e. hidden controls are blanked.
+- Updated the getInputs() method in all integration adaptors and FBRun.inputs().  This returns an object with all input values and is used by the preview submit action (FBRun.nav.submitAction()) to accurately show form info.
+- Added a new validation type for radios with only one option: 'required'.
+- Removed data-parsley-group input from all properties panels.  Updater.js changes type to hidden in old json files).
+- Bug fixed: validation groups correctly target their validation context (tablegroup or page).
+
+
+V 0.6.8  
+- Bug fixed: Table Group children were not correctly removed from definition object when deleting the table.
+
+
+V 0.6.7
+- Bug fixed: Table Group 'Add' button does not display when a vis rule is applied to the Table Group.
+
+
+V 0.6.6
+- Bug fixed: Table Groups rendered bad html when a file was opened.
+
+
+V 0.6.5
+- The code editor no longer displays full form code; it is now a live JavaScript code editor.  Custom code is saved with the form and is executable.
+
+
+V 0.6.4
+- Added cancel button to HTML Editor view.
+- Bug fix: choice lists were not showing line breaks in properties panel.
+
+
+V 0.6.3
+- Added Summernote HTML Editor. Just click on headings and text properties for statictext, alert and panel elements.
+
+
+V 0.6.2
+- Brush up those HTML skills and bring on the awesome. Static text, panels and alerts now support HTML markup. 
+
+
+V 0.6.1
+- Bug fix: issue with TabelGroup markup.
+
+
+V 0.6.0
+- Preview now makes ALL controls with visibility rule hidden by default.  This prevents screen jank when visibility is evaluated in slow browsers.
+- When deleting a control that is used as a trigger in a vis rule, either directly, or within a TableGroup or Row, remove the vis rule and its application in any controls.
+
+
+V 0.5.11
+- Fixed bug: Updater did not apply form modes from plugins (FBModes).  
+- Fixed bug: Updater did not compare versions in dot notation.  Added FB.update.compare(a, b) public method.
+
+
+V 0.5.10
+- Fixed bug: Get latest version did not compare version numbers in dot notation.  Updated package web service.
+- Fixed bug: Storage and Calculon adaptors did not consistently get the correct set of inputs from a form.  
+
+
+V 0.5.9
+- Fixed bug: updating a vis rule did not apply new triggers (if they were changed).
+
+
+V 0.5.8
+- Fixed bug: adding a new vis rule did not display the row of controls.  
+- Upgraded jQuery to 1.11
+
+
+
+V 0.5.7
+- Added Calc Button, with simple configuration properties for Calc Engine.  Note that you should blank out the proxy for testing.
+- Added plugin folder for output modes, under js/modes/ and updated preview.js to use them.
+- Added MyLife output mode (accessible under form properties) for pasting content into ektron.
+- Code view now shows the same as menu > Export Html and is editable.  Code changes are not saved to the form definition.
+- Removed support for bootstrap 2 (though templates remain in place for now).
+
+
+V 0.5.6
+- Refactored all design-time JavaScript into FB modules.
+- Fixed bug; when a page is delete the displayed page badge did not update.
+- Fixed bug: when deleting a page, the page controls were not all correctly removed from FB.def and the page badge and page select option did not correctly update.
+- Fixed bugs with tab index renumbering; new function FB.renumberTabIndex() covers three scenarios
+- Added functions to renumber tab indexes after moving rows up or down.
+- Fixed bug: vis rule does not persist when applied to a control.
+- Added task to grunt build process which creates release version as zip file (ready for upload to FTP).
+- Enhanced latest version link to show release info as a popover.
+
+
+V 0.5.5
+- Added integration to get latest version info from server.
+
+
+V 0.5.4
+- Detect whether rule (left) control is a radio, checkbox or select.  If it is, then display a list of options to pick on the right.
+- Check that rule is valid before calling writeExpression (on Done, AND, OR button, val(left) > 0).
+- When creating rule and writing expression, get right value from the appropriate control: rule-right-n or rule-right-list-n (uses length of select).
+- Store the control type (input|select) in FB.vis.rules.def
+- Edit rule - know to render correct control type ans set selected value
+- When moving the position of a control above another which contributes to its visibility, highlight the control and display error text under the label.  
+- When moving the position of a row verify all form visibility rules after move.
+- Split views.js into views, views.rulebuilder and views.rows files.
+- When importing older files (0.5.0 to 0.5.3), set default rule type to input (updater.js)
+
+
+V 0.5.3
+- Added form name to code view (renderHtml) and preview.js.
+- Changed Ace code viewer style to 'chrome'.
+
+
+V 0.5.2
+- Finessed the animation transitions on screens.
+- Added 'no rules' and 'no controls to make rules' messages in Rule Builder screens
+
+
+
+V 0.5.1
+- Changed Form builder CSS and markup to use Flexbox.  Enables full screen layout with scroll bars in each panel.
+- Changed properties panel to use select for Properties, Validation, Vis, etc. rather than a tabbed layout, to work better on smaller screens.
+- Fixed bug where page name is not shown or clickable after loading a file.
+- Added animations on screen transitions.
+- Design|Code|Rules toggle buttons are not floated right in order to stop the two-row navbar issue.  This is a temporary workaround.
+
+
+V 0.5.0
+- RuleBuilder edit and delete actions for rules.  NOTE: any rules created in versions < 0.5 will need to be deleted and created again from scratch as the new object stores an editable definition for each rule.  
+- Added new form output mode for "Affordability", which is based upon bootstrap3, but with custom header and footer.
+- Changed the presented vis rule into a more human-readable format
+
+
+V 0.4.3
+- Fade out panels when RuleBuilder is shown
+- Set last rule button to Done when a rule item is deleted
+
+
+V 0.4.2
+- Added rule builder UI
+- DataTable to display all rules
+- Store rules in form definition; FB.vis
+- Save and read vis rules to/from json file
+- Changed data-vis field to type Select and changed ShowProperties() to populate it with list of live rules
+- Amended updater.js to change data-vis type to Select
+- Added automatic update at end of app:readForm(), so that files are updated on import
+
+
+v 0.4.0
+- Added inputsize field to radios and checkboxes.  Size 4 by default. [Updater.js]
+
+
+V 0.3.1 [Shelter Release]
+- Added showidcol field to tables; this is used to determine whether to set col 0 from data [Updater.js]
+- Added Calculon2.js plugin for new Calc Engine.  Defaults to named instance of calc2
+- Reduced size of properties pane controls to fit on laptop screens better
+- Updated grunt package to rev asset names in index.html
+- Started refactoring code base into modules
+
+
+V 0.3.0
+- Added Rule Builder button to navbar.
+- Added Rule Builder screen to main content area when button active.
+- Changed help to a Popover feature
+- Added utility functions textByValue() and valueByText() to transpose meaningful values in Table Groups.
+- Added Ace library as the code editor and viewer
+- Fixed Bug where parsley validation was left in place after moving on from a page or table group
+- Fixed Bug where all cells were being cast as currency in results; now have an avoid[] array
+- Created a Calculon jQuery plugin class for all methods
+- Added page visibility field [Updater.js] and changed the handling of page vis (hidden in sidenav)
+- added Panel control to Bootstrap 3
+- Updated Action Buttons to handle pubsub events in Bootstrap 3
+- Updated Action Buttons to use buttonsize field 
+- Fixed bug where applying a vis rule did not trigger cascaded vis rules
+- Changed sidenav markup and CSS.  Now on right of screen for > one page.  Uses affix to pin on screen.
+- Added Shelter logo
+
+
+V 0.2.2
+- Added Hidden controls (data object in input.js, bootstrap 3 and 2 templates)
+- Added new utility function addOptionToSelect($con, text, value) to formbuilder.js
+- Changed TableGroups to handle hidden and ignored fields:
+  - Hidden fields have attribute columnheading=false.  They are stored in table data, but do not display.
+  - Ignored fields have attribute columndata=false.  They are not displayed in table or used as table data
+  - Updated all control templates to handle data-colshow and data-coldata respectively, when a child of a TableGroup
+- Changed visibility data object to handle rules and trigger controls separately
+- Remove FixedData field from TableGroups; this was always a fudge
+- Updater adds columnheading and columndata fields to TableGroup child objects and removes and fixed objects from tablegroups
+- Added event binding and function to add Other values into linked select controls
+
+
+V 0.2.1
+- Changelog started.
+- Added basic ability to assign a (hard-coded) vis rule for Shelter.
+- New def object field: data-vis to hold rule id.
+- Updated all control templates to apply data-vis attribute for visibility.
+- Hidden controls have value set to empty (or default).
+- New def object field: data-parsley-required, on multiple radios and checkboxes.  Fixed validation issue.
+- Changed parsleyOptions to ignore validation on all hidden controls.
+- Added datepicker options for future-only and DOB type dates.
+- New def object field: constraint, to dateinput controls.  Stores the type (above).  Updated template.
+- Added an updater.js file to process pre-0.2 json files.

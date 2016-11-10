@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Form Builder</title>
+<link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkZCRkUzNTUxNjhFQTExRTQ5Rjg3RTkyOTQ2RDFDMUVEIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkZCRkUzNTUyNjhFQTExRTQ5Rjg3RTkyOTQ2RDFDMUVEIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RkJGRTM1NEY2OEVBMTFFNDlGODdFOTI5NDZEMUMxRUQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RkJGRTM1NTA2OEVBMTFFNDlGODdFOTI5NDZEMUMxRUQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6fe9HcAAALXElEQVR42uya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" rel="icon" type="image/x-icon" />
+    <!--(bake /templates/dev-css.html)-->
+</head>
+<body>
+    <!-- Header -->
+    <div class="row">
+        <!--(bake /templates/header.html)-->
+    </div>
+    <!-- Main Body -->
+    <div class="fb-container" id="main">
+        <!-- Form Design View -->
+        <div id="content" class="main">
+            <form role="form" class="form-horizontal form-fb">
+                <div id="form-zone" class="panel-content">
+                </div>
+            </form>
+        </div>
+        <!-- Code View -->
+        <div id="form-html" class="main hide">
+            <div class="panel-content">
+                <textarea class="hide" id="html" class="col-md-12" rows="30">
+                </textarea>
+                <pre id="code-view"></pre>
+            </div>
+        </div>
+        <!-- Rulebuilder View -->
+        <div id="rulebuilder" class="main hide">
+            <div class="panel-content" id="rules-list">
+                <h3>Rules</h3>
+                <!-- No rules message -->
+                <p class="rule-message">There are no rules to display</p>
+
+                <!-- Rules table -->
+                <table cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered hide">
+                    <thead>
+                        <tr>
+                            <th>Rule Id</th>
+                            <th>Name</th>
+                            <th>Expression</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="form-group">
+                    <button class="btn btn-danger" onclick="FB.rulebuilder.showAddRule();">Add Rule</button>
+                </div>
+            </div>
+            <!-- Add or edit rule page -->
+            <div class="panel-content hide" id="add-rule">
+                <p class="rule-message">There are no form controls to use in rules</p>
+                <!-- Rule Designer -->
+                <div class="rule-designer hide">
+                    <div id="rulestable"></div>
+                    <h3>Expression</h3>
+                    <div id="rule-expression"></div>
+                    <div id="rule-save"></div>
+                </div>
+            </div>
+        </div> 
+        <!-- Left Panel -->
+        <div id="left-pane" class="sidepanel left">
+            <div class="panel-content"></div>
+        </div>
+        <!-- Right Panel -->
+        <div id="right-pane" class="sidepanel right">
+            <div class="panel-content"></div>
+        </div>
+
+        <!-- HTML Editor -->
+        <div id="html-editor-background" class="main hide">
+            <textarea class="html-editor" rows="20"></textarea>
+            <button class="btn btn-default margin-top-15" id="cancel-html-btn" onclick="FB.designer.closeHtmlEditor();">Cancel</button>&nbsp;&nbsp;
+            <button class="btn btn-danger margin-top-15" id="save-html-btn">Save HTML</button>
+        </div>
+    </div>
+
+    <!--(bake /templates/context-menu.html)-->
+    <!--(bake /templates/modal-add-row.html)-->
+    <!--(bake /templates/modal-open-file.html)-->
+
+    <!-- Templates -->
+    <!--(bake /templates/handlebars/form-template.html)-->
+    <!--(bake /templates/handlebars/toolbox-template.html)-->
+    <!--(bake /templates/handlebars/properties-panel-template.html)-->
+    <!--(bake /templates/handlebars/new-page-template.html)-->
+    <!--(bake /templates/handlebars/rule-item.html)-->
+    <!--(bake /templates/handlebars/rules-table-action-button.html)-->
+    <!--(bake /templates/handlebars/rules-table-nav-buttons.html)-->
+    
+    <!-- Bootstrap 3 Templates -->
+    <!--(bake /templates/handlebars/bootstrap3/textinput.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/statictext.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/hiddeninput.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/dateinput.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/passwordinput.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/prependedtext.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/appendedtext.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/textarea.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/alert.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/panel.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/multipleradios.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/multipleradiosinline.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/multiplecheckboxes.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/multiplecheckboxesinline.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/selectbasic.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/selectmultiple.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/actionbutton.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/calcbutton.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/calcbuttonv2.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/inputbutton.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/table.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/tablegroup.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/tablegroup-action-button.html)-->
+    <!--(bake /templates/handlebars/bootstrap3/progress-bar-template.html)-->
+    
+    <!--(bake /templates/dev-js.html)-->
+</body>
+</html>

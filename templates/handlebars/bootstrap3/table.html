@@ -1,0 +1,20 @@
+<!-- Table -->
+<script id="table-component-template" type="text/x-handlebars-template">
+    {{#with data}}   
+    <div class="table-responsive" id="{{fields.id.value}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.showidcol.value}} data-idcol="true"{{/if}}>        
+        <table class="table{{#if fields.bordered.value}} table-bordered{{/if}}{{#if fields.striped.value}} table-striped{{/if}}">
+            {{#with fields}} 
+            <thead>
+                <tr>
+                    {{#each headings.value}}
+                    <th>{{text}}</th>
+                    {{/each}}
+                </tr>
+            </thead>
+            {{/with}}
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    {{/with}}
+</script>

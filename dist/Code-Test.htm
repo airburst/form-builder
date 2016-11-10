@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Code Test</title>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/jquery-ui.min.css"/>
+        <link rel="stylesheet" href="assets/datepicker/css/datepicker.css"/>
+        <link rel="stylesheet" href="css/spinners.css"/>
+        <link rel="stylesheet" href="css/style.css" media="screen"/>
+        <link rel="stylesheet" href="css/print.css" media="print"/>
+        <!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/ie8.css"/>
+        <script src="js/libs/html5shiv.min.js"></script>
+        <script src="js/libs/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body class="fb-body">
+        <div class="fb-wrapper" id="fb-main">
+            <form role="form" class="form-horizontal form-fb" name="Code Test">
+                <div class="container container-form">
+                    <section class="page" id="p1" data-id="1" name="Page 1">
+                        <div class="col-md-12 fb-form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group" id="2" data-id="2">
+                                        <label for="name" class="col-sm-4 control-label">Name</label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control input-md" id="name" name="name" type="text" tabindex="1"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="3" data-id="3">
+                                        <label for="actionbutton1" class="col-sm-4 control-label">Action Button</label>
+                                        <div class="col-sm-6">
+                                            <button id="actionbutton1" name="actionbutton1" class="btn btn-primary" tabindex="2" onclick="doThing($(&#x27;#name&#x27;).val());;">Action</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row nav-buttons">
+                                <label class="col-sm-4 control-label"></label>
+                                <div class="col-sm-8">
+                                    <button class="btn btn-danger btn-submit" onclick="FBRun.nav.submitAction('p1');">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </form>
+        </div>
+        <div class="spinner-container"></div>
+        <script src="js/libs/jquery-1.11.1.min.js"></script>
+        <script src="js/libs/jquery-ui.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/datepicker/js/bootstrap-datepicker.js"></script>
+        <script src="js/libs/bootbox.js"></script>
+        <script src="js/libs/parsley.js"></script>
+        <script src="js/formbuilder.min.007e9dc1.js?mode=bootstrap3"></script>
+        <script>$('button').click(function(e){e.preventDefault();e.stopPropagation();}); $('ul.sidenav li a').click(function(e){e.preventDefault();});FBRun.dates.applyDatePickers(); $('.helptext').popover(); </script>
+        <script>var vis = {"rules":[],"triggers":[]}; FBRun.vis.init();</script>
+        <script>var doThing = function (object) {
+    alert(object);
+};</script>
+    </body>
+</html>

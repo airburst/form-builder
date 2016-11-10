@@ -1,0 +1,111 @@
+<!-- Properties Panel -->
+<script id="properties-template" type="text/x-handlebars-template">
+    {{#with data}}
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#properties" data-toggle="tab"><i class="fa fa-list"></i></a></li>
+        <li><a href="#validation" data-toggle="tab"><i class="fa fa-check-square"></i></a></li>
+        <li><a href="#visibility" data-toggle="tab"><i class="fa fa-eye"></i></a></li>
+        <li><a href="#events" data-toggle="tab"><i class="fa fa-bolt"></i></a></li>
+        <!--<li><a href="#custom" data-toggle="tab"><i class="fa fa-cog"></i></a></li>-->
+    </ul>
+    <div class="tab-content" data-controlid="{{id}}">
+        <div class="tab-pane active" id="properties">
+            <div class="fb-container properties-pane">
+                <form id="properties-form" role="form">
+                </form>
+            </div>
+        </div>
+        <div class="tab-pane" id="validation">
+            <div class="fb-container properties-pane">
+                <form id="validation-form" role="form">
+                </form>
+            </div>
+        </div>
+        <div class="tab-pane" id="visibility">
+            <div class="fb-container properties-pane">
+                <form id="vis-form" role="form">
+                </form>
+            </div>
+        </div>
+        <div class="tab-pane" id="events">
+            <div class="fb-container properties-pane">
+                <form id="events-form" role="form">
+                </form>
+            </div>
+        </div>
+        <div class="tab-pane" id="custom">
+            <div class="fb-container properties-pane">
+                <pre id="custom-fields"></pre>
+                <form id="custom-form" role="form">
+                </form>
+            </div>
+        </div>
+    </div>
+    {{/with}}
+</script>
+
+<script id="properties-input-template" type="text/x-handlebars-template">
+    <div class="form-group">
+        <label class="label-sm">{{properties.label}}</label>
+        <input class="form-control input-sm{{#if properties.html}} edit-html{{/if}}" type="text" name="{{controltype}}" id="{{controltype}}" value ="{{properties.value}}" />
+    </div>
+</script>
+
+<script id="properties-input-tags-template" type="text/x-handlebars-template">
+    <div class="form-group">
+        <label class="label-sm">{{properties.label}}</label>
+        <input class="form-control input-sm{{#if properties.html}} edit-html{{/if}}" type="text" name="{{controltype}}" id="{{controltype}}" value ="{{properties.value}}" data-role="tagsinput"/>
+    </div>
+</script>
+
+<script id="properties-checkbox-template" type="text/x-handlebars-template">
+    <div class="form-group">
+        <label class="label-sm" class="checkbox">
+          <input type="checkbox" name="{{controltype}}" id="{{controltype}}"{{#if properties.value}} checked="checked"{{/if}}/>{{properties.label}}
+        </label>
+    </div>
+</script>    
+
+<script id="properties-textarea-split-template" type="text/x-handlebars-template">
+    <div class="form-group">
+        <label class="label-sm">{{properties.label}}</label>
+        <textarea class="form-control input-sm" rows="6" name="{{controltype}}" id="{{controltype}}" data-type="textarea-split">{{#each properties.value}}
+        {{text}} : {{value}}{{#if checked}} *{{/if}}{{#if selected}} *{{/if}}{{/each}}
+        </textarea>
+    </div>
+</script> 
+
+<script id="properties-textarea-template" type="text/x-handlebars-template">
+    <div class="form-group">
+        <label class="label-sm">{{properties.label}}</label>
+        <textarea class="form-control input-sm{{#if properties.html}} edit-html{{/if}}" rows="6" name="{{controltype}}" id="{{controltype}}">{{properties.value}}
+        </textarea>
+    </div>
+</script> 
+
+<script id="properties-select-template" type="text/x-handlebars-template">
+    <div class="form-group">
+        <label class="label-sm">{{properties.label}}</label>
+        <select name="{{controltype}}" id="{{controltype}}" class="form-control input-sm">
+            {{#each properties.value}}
+            <option value="{{value}}"{{#if selected}} selected="selected"{{/if}}>{{text}}</option>
+            {{/each}}
+        </select>
+    </div>
+</script>
+
+<script id="properties-hidden-template" type="text/x-handlebars-template">
+    <div class="form-group">
+        <label class="label-sm hide">{{properties.label}}</label>
+        <input class="form-control input-sm" type="hidden" name="{{controltype}}" id="{{controltype}}" value ="{{properties.value}}" />
+    </div>
+</script>
+
+<script id="properties-actions-template" type="text/x-handlebars-template">
+    <div class="form-group">
+        <button type="button" class="btn btn-default btn-sm" onclick="FB.designer.emptyProperties();">Cancel</button>
+        {{#if showdelete}}<button type="button" class="btn btn-default btn-sm" onclick="FB.designer.deleteComponent({{index}});">Delete</button>{{/if}}
+        {{#if showclone}}<button type="button" class="btn btn-default btn-sm" onclick="FB.designer.cloneComponent({{index}});">Clone</button>{{/if}}
+        <button type="button" class="btn btn-danger btn-sm" data-type="panel" onclick="{{action}}({{index}});">Save</button>
+    </div>
+</script> 

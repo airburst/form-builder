@@ -1,0 +1,30 @@
+<!-- Modal to add new container -->
+<form role="form" class="form">
+    <div id="container-modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Add new container</h4>
+                </div>
+                <div class="modal-body" id="container-form-body">
+                    <div class="form-group">
+                        <label for="container-count" class="col-md-4">Number of columns</label>
+                        <div class="col-md-8">
+                            <select id="container-count" class="form-control">
+                                <option selected="selected">1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>   
+                        </div>
+                    </div>
+                </div>  
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                    <a href="#" class="btn btn-danger" onclick="FB.rows.add($('#container-count').val());" data-dismiss="modal">Add</a>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</form>

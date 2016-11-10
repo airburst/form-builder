@@ -1,0 +1,54 @@
+<header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Form Builder</a>
+        </div>
+        <!-- Navbar buttons -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <!-- Menu -->
+            <ul id="mainmenu" class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">File <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#load-modal" data-toggle="modal" data-target="#load-modal"><span class="glyphicon glyphicon-open"></span> Open</a></li>
+                        <li><a id="save-json" href="#" onclick="FB.file.save('json');"><span class="glyphicon glyphicon-save"></span> Save</a></li>
+                        <li><a id="save-html" href="#" onclick="FB.file.save('html');"><span class="glyphicon glyphicon-save"></span> Export HTML</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Form <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#container-modal" data-toggle="modal" data-target="#container-modal"><span class="glyphicon glyphicon-plus"></span> Add Row</a></li>
+                        <li><a id="preview" href="#" onclick="FB.preview.popup();"><span class="glyphicon glyphicon-flash"></span> Preview</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Form actions -->
+            <div class="navbar-form">
+                <select id="page" class="form-control"></select>
+                <button id="add-page" class="btn btn-default" onclick="FB.page.add();"><span class="glyphicon glyphicon-plus"></span> Add Page</button>
+                <button id="delete-page" class="btn btn-default" onclick="FB.page.deletePage();"><span class="glyphicon glyphicon-trash"></span> Delete Page</button>
+                <button id="preview-button" class="btn btn-success" onclick="FB.preview.popup();"><span class="glyphicon glyphicon-flash"></span></button>
+                
+                <!-- Toggle view buttons -->
+                <div class="navbar-spacer"></div>
+                <div class="navbar-buttons-right">
+                    <div class="btn-group">
+                        <button id="show-design-button" class="btn btn-default btn-toggle active" onclick="FB.designer.showDesign();"><span class="glyphicon glyphicon-list-alt"></span> Design</button>
+                        <button id="show-code-button" class="btn btn-default btn-toggle" onclick="FB.designer.showCode();"><i class="fa fa-code"></i> Code</button>
+                        <button id="show-rules-button" class="btn btn-default btn-toggle" onclick="FB.designer.showRuleBuilder();"><span class="glyphicon glyphicon-tasks"></span> Rules</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div><!-- /.navbar-collapse -->
+    </nav><!-- End Navbar -->
+</header>

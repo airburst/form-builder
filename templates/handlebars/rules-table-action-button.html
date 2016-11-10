@@ -1,0 +1,18 @@
+<!-- Rule Item -->
+<script id="rules-table-action-button-template" type="text/x-handlebars-template">
+  {{#with data}}
+    <div class="form-group">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default">Action</button>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#" onclick="FB.rulebuilder.changeRule({{rule}}, 'edit');">Edit</a></li>
+          <li><a href="#" onclick="FB.rulebuilder.changeRule({{rule}}, 'delete');">Delete</a></li>
+        </ul>
+      </div>
+    </div>
+  {{/with}}
+</script>

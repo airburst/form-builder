@@ -1,0 +1,12 @@
+<!-- Progress bar -->
+<script id="progress-template" type="text/x-handlebars-template">
+    {{#with data}} 
+    <div id="progress" class="col-sm-4">
+        <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{value}}" aria-valuemin="0" aria-valuemax="100" style="width: {{value}}%">
+                <span class="sr-only">{{value}}% Complete</span>
+            </div>
+        </div>
+    </div>
+    {{/with}}
+</script>

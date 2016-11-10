@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Form Builder</title>
+<link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkZCRkUzNTUxNjhFQTExRTQ5Rjg3RTkyOTQ2RDFDMUVEIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkZCRkUzNTUyNjhFQTExRTQ5Rjg3RTkyOTQ2RDFDMUVEIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RkJGRTM1NEY2OEVBMTFFNDlGODdFOTI5NDZEMUMxRUQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RkJGRTM1NTA2OEVBMTFFNDlGODdFOTI5NDZEMUMxRUQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6fe9HcAAALXElEQVR42uya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" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="css/main.min.d33cba50.css" />
+</head>
+<body>
+    <!-- Header -->
+    <div class="row">
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Form Builder</a>
+                </div>
+                <!-- Navbar buttons -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <!-- Menu -->
+                    <ul id="mainmenu" class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">File <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#load-modal" data-toggle="modal" data-target="#load-modal"><span class="glyphicon glyphicon-open"></span> Open</a></li>
+                                <li><a id="save-json" href="#" onclick="FB.file.save('json');"><span class="glyphicon glyphicon-save"></span> Save</a></li>
+                                <li><a id="save-html" href="#" onclick="FB.file.save('html');"><span class="glyphicon glyphicon-save"></span> Export HTML</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Form <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#container-modal" data-toggle="modal" data-target="#container-modal"><span class="glyphicon glyphicon-plus"></span> Add Row</a></li>
+                                <li><a id="preview" href="#" onclick="FB.preview.popup();"><span class="glyphicon glyphicon-flash"></span> Preview</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- Form actions -->
+                    <div class="navbar-form">
+                        <select id="page" class="form-control"></select>
+                        <button id="add-page" class="btn btn-default" onclick="FB.page.add();"><span class="glyphicon glyphicon-plus"></span> Add Page</button>
+                        <button id="delete-page" class="btn btn-default" onclick="FB.page.deletePage();"><span class="glyphicon glyphicon-trash"></span> Delete Page</button>
+                        <button id="preview-button" class="btn btn-success" onclick="FB.preview.popup();"><span class="glyphicon glyphicon-flash"></span></button>
+                        
+                        <!-- Toggle view buttons -->
+                        <div class="navbar-spacer"></div>
+                        <div class="navbar-buttons-right">
+                            <div class="btn-group">
+                                <button id="show-design-button" class="btn btn-default btn-toggle active" onclick="FB.designer.showDesign();"><span class="glyphicon glyphicon-list-alt"></span> Design</button>
+                                <button id="show-code-button" class="btn btn-default btn-toggle" onclick="FB.designer.showCode();"><i class="fa fa-code"></i> Code</button>
+                                <button id="show-rules-button" class="btn btn-default btn-toggle" onclick="FB.designer.showRuleBuilder();"><span class="glyphicon glyphicon-tasks"></span> Rules</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div><!-- /.navbar-collapse -->
+            </nav><!-- End Navbar -->
+        </header>
+    </div>
+    <!-- Main Body -->
+    <div class="fb-container" id="main">
+        <!-- Form Design View -->
+        <div id="content" class="main">
+            <form role="form" class="form-horizontal form-fb">
+                <div id="form-zone" class="panel-content">
+                </div>
+            </form>
+        </div>
+        <!-- Code View -->
+        <div id="form-html" class="main hide">
+            <div class="panel-content">
+                <textarea class="hide" id="html" class="col-md-12" rows="30">
+                </textarea>
+                <pre id="code-view"></pre>
+            </div>
+        </div>
+        <!-- Rulebuilder View -->
+        <div id="rulebuilder" class="main hide">
+            <div class="panel-content" id="rules-list">
+                <h3>Rules</h3>
+                <!-- No rules message -->
+                <p class="rule-message">There are no rules to display</p>
+
+                <!-- Rules table -->
+                <table cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered hide">
+                    <thead>
+                        <tr>
+                            <th>Rule Id</th>
+                            <th>Name</th>
+                            <th>Expression</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="form-group">
+                    <button class="btn btn-danger" onclick="FB.rulebuilder.showAddRule();">Add Rule</button>
+                </div>
+            </div>
+            <!-- Add or edit rule page -->
+            <div class="panel-content hide" id="add-rule">
+                <p class="rule-message">There are no form controls to use in rules</p>
+                <!-- Rule Designer -->
+                <div class="rule-designer hide">
+                    <div id="rulestable"></div>
+                    <h3>Expression</h3>
+                    <div id="rule-expression"></div>
+                    <div id="rule-save"></div>
+                </div>
+            </div>
+        </div> 
+        <!-- Left Panel -->
+        <div id="left-pane" class="sidepanel left">
+            <div class="panel-content"></div>
+        </div>
+        <!-- Right Panel -->
+        <div id="right-pane" class="sidepanel right">
+            <div class="panel-content"></div>
+        </div>
+
+        <!-- HTML Editor -->
+        <div id="html-editor-background" class="main hide">
+            <textarea class="html-editor" rows="20"></textarea>
+            <button class="btn btn-default margin-top-15" id="cancel-html-btn" onclick="FB.designer.closeHtmlEditor();">Cancel</button>&nbsp;&nbsp;
+            <button class="btn btn-danger margin-top-15" id="save-html-btn">Save HTML</button>
+        </div>
+    </div>
+
+    <!-- Right-click Menu -->
+    <div id="menu">
+        <ul>
+            <li id="rowmoveup"><a href="#" onclick=""><span class="glyphicon glyphicon-arrow-up"></span> Move Up</a></li>
+            <li id="rowmovedown"><a href="#" onclick=""><span class="glyphicon glyphicon-arrow-down"></span> Move Down</a></li>
+            <li id="rowdelete"><a href="#" onclick=""><span class="glyphicon glyphicon-trash"></span> Delete</a></li>
+        </ul>
+    </div>
+    <!-- Modal to add new container -->
+    <form role="form" class="form">
+        <div id="container-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Add new container</h4>
+                    </div>
+                    <div class="modal-body" id="container-form-body">
+                        <div class="form-group">
+                            <label for="container-count" class="col-md-4">Number of columns</label>
+                            <div class="col-md-8">
+                                <select id="container-count" class="form-control">
+                                    <option selected="selected">1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>   
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                        <a href="#" class="btn btn-danger" onclick="FB.rows.add($('#container-count').val());" data-dismiss="modal">Add</a>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </form>
+    <!-- Modal to load file -->
+    <form role="form" class="form">
+        <div id="load-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Load form</h4>
+                    </div>
+                    <div class="modal-body" id="load-form-body">
+                        <div class="form-group">
+                            <label for="fileinput" class="col-md-2 control-label">File</label>
+                            <div class="col-md-4">
+                                <input id="fileinput" name="filebutton" class="input-file" type="file" />
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </form>
+
+    <!-- Templates -->
+    <!-- Form name -->
+    <script id="form-template" type="text/x-handlebars-template">
+        {{#with fields}}
+        <h2 class="labels">
+          <span class="label label-default" id="form-name" data-id="0">{{id.value}}</span>
+          <span class="label label-default" id="page-name"></span>
+        </h2>
+        {{/with}}
+    </script>
+    <!-- Toolbox -->
+    <script id="toolbox-template" type="text/x-handlebars-template">
+        <div class="panel-group" id="accordion">
+            {{#each tools}}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{@index}}">
+                            {{title}}
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse{{@index}}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        {{#each controls}}
+                        <div class="tool" draggable="true" data-title="{{title}}" data-section="{{../title}}"{{#if name}} data-name="{{name}}"{{/if}}>
+                            <p>{{title}}</p>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </script>
+    <!-- Properties Panel -->
+    <script id="properties-template" type="text/x-handlebars-template">
+        {{#with data}}
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#properties" data-toggle="tab"><i class="fa fa-list"></i></a></li>
+            <li><a href="#validation" data-toggle="tab"><i class="fa fa-check-square"></i></a></li>
+            <li><a href="#visibility" data-toggle="tab"><i class="fa fa-eye"></i></a></li>
+            <li><a href="#events" data-toggle="tab"><i class="fa fa-bolt"></i></a></li>
+            <!--<li><a href="#custom" data-toggle="tab"><i class="fa fa-cog"></i></a></li>-->
+        </ul>
+        <div class="tab-content" data-controlid="{{id}}">
+            <div class="tab-pane active" id="properties">
+                <div class="fb-container properties-pane">
+                    <form id="properties-form" role="form">
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane" id="validation">
+                <div class="fb-container properties-pane">
+                    <form id="validation-form" role="form">
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane" id="visibility">
+                <div class="fb-container properties-pane">
+                    <form id="vis-form" role="form">
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane" id="events">
+                <div class="fb-container properties-pane">
+                    <form id="events-form" role="form">
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane" id="custom">
+                <div class="fb-container properties-pane">
+                    <pre id="custom-fields"></pre>
+                    <form id="custom-form" role="form">
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </script>
+    
+    <script id="properties-input-template" type="text/x-handlebars-template">
+        <div class="form-group">
+            <label class="label-sm">{{properties.label}}</label>
+            <input class="form-control input-sm{{#if properties.html}} edit-html{{/if}}" type="text" name="{{controltype}}" id="{{controltype}}" value ="{{properties.value}}" />
+        </div>
+    </script>
+    
+    <script id="properties-input-tags-template" type="text/x-handlebars-template">
+        <div class="form-group">
+            <label class="label-sm">{{properties.label}}</label>
+            <input class="form-control input-sm{{#if properties.html}} edit-html{{/if}}" type="text" name="{{controltype}}" id="{{controltype}}" value ="{{properties.value}}" data-role="tagsinput"/>
+        </div>
+    </script>
+    
+    <script id="properties-checkbox-template" type="text/x-handlebars-template">
+        <div class="form-group">
+            <label class="label-sm" class="checkbox">
+              <input type="checkbox" name="{{controltype}}" id="{{controltype}}"{{#if properties.value}} checked="checked"{{/if}}/>{{properties.label}}
+            </label>
+        </div>
+    </script>    
+    
+    <script id="properties-textarea-split-template" type="text/x-handlebars-template">
+        <div class="form-group">
+            <label class="label-sm">{{properties.label}}</label>
+            <textarea class="form-control input-sm" rows="6" name="{{controltype}}" id="{{controltype}}" data-type="textarea-split">{{#each properties.value}}
+            {{text}} : {{value}}{{#if checked}} *{{/if}}{{#if selected}} *{{/if}}{{/each}}
+            </textarea>
+        </div>
+    </script> 
+    
+    <script id="properties-textarea-template" type="text/x-handlebars-template">
+        <div class="form-group">
+            <label class="label-sm">{{properties.label}}</label>
+            <textarea class="form-control input-sm{{#if properties.html}} edit-html{{/if}}" rows="6" name="{{controltype}}" id="{{controltype}}">{{properties.value}}
+            </textarea>
+        </div>
+    </script> 
+    
+    <script id="properties-select-template" type="text/x-handlebars-template">
+        <div class="form-group">
+            <label class="label-sm">{{properties.label}}</label>
+            <select name="{{controltype}}" id="{{controltype}}" class="form-control input-sm">
+                {{#each properties.value}}
+                <option value="{{value}}"{{#if selected}} selected="selected"{{/if}}>{{text}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </script>
+    
+    <script id="properties-hidden-template" type="text/x-handlebars-template">
+        <div class="form-group">
+            <label class="label-sm hide">{{properties.label}}</label>
+            <input class="form-control input-sm" type="hidden" name="{{controltype}}" id="{{controltype}}" value ="{{properties.value}}" />
+        </div>
+    </script>
+    
+    <script id="properties-actions-template" type="text/x-handlebars-template">
+        <div class="form-group">
+            <button type="button" class="btn btn-default btn-sm" onclick="FB.designer.emptyProperties();">Cancel</button>
+            {{#if showdelete}}<button type="button" class="btn btn-default btn-sm" onclick="FB.designer.deleteComponent({{index}});">Delete</button>{{/if}}
+            {{#if showclone}}<button type="button" class="btn btn-default btn-sm" onclick="FB.designer.cloneComponent({{index}});">Clone</button>{{/if}}
+            <button type="button" class="btn btn-danger btn-sm" data-type="panel" onclick="{{action}}({{index}});">Save</button>
+        </div>
+    </script> 
+    <script id="new-page-template" type="text/x-handlebars-template">
+        {{#with data}} 
+        {{#with fields}}
+        <section class="page hide" id="{{id.value}}" data-id="{{../id}}" name="{{name.value}}">
+        </section>
+        {{/with}}
+        {{/with}}
+    </script>
+    <!-- Rule Item -->
+    <script id="rule-item-template" type="text/x-handlebars-template">
+      {{#with data}}
+      <form role="form" class="form-inline margin-bottom" data-ruleitem="{{rule}}">  
+        <div class="form-group">
+          <label class="sr-only" for="rule-left-{{rule}}">Control</label>
+          <select class="form-control" id="rule-left-{{rule}}">
+            <option></option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="rule-operator-{{rule}}">Operator</label>
+          <select class="form-control" id="rule-operator-{{rule}}">
+            <option value=" < ">&lt;</option>
+            <option value=" <= ">&lt;=</option>
+            <option value=" == ">=</option>
+            <option value=" >= ">&gt;=</option>
+            <option value=" > ">&gt;</option>
+            <option value=" != ">!=</option>
+            <option value=" Contains ">Contains</option>
+            <option value=" Does not contain ">Does not contain</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="rule-right-{{rule}}">Value</label>
+          <input class="form-control" type="text" id="rule-right-{{rule}}"/>   
+          <select class="form-control hide" type="text" id="rule-right-list-{{rule}}"></select>
+        </div>
+    
+        <div class="form-group">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default" id="rule-btn-{{rule}}" onclick="FB.rulebuilder.addRuleItem({{rule}}, 'Done'{{#if mode}}, '{{mode}}'{{/if}});">Done</button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#" onclick="FB.rulebuilder.addRuleItem({{rule}}, 'OR'{{#if mode}}, '{{mode}}'{{/if}});">OR</a></li>
+              <li><a href="#" onclick="FB.rulebuilder.addRuleItem({{rule}}, 'AND'{{#if mode}}, '{{mode}}'{{/if}});">AND</a></li>
+              <li><a href="#" onclick="FB.rulebuilder.removeRuleItem({{rule}}{{#if mode}}, '{{mode}}'{{/if}});">Remove</a></li>
+            </ul>
+          </div>
+        </div>
+      </form>
+      {{/with}}
+    </script>
+    <!-- Rule Item -->
+    <script id="rules-table-action-button-template" type="text/x-handlebars-template">
+      {{#with data}}
+        <div class="form-group">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default">Action</button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#" onclick="FB.rulebuilder.changeRule({{rule}}, 'edit');">Edit</a></li>
+              <li><a href="#" onclick="FB.rulebuilder.changeRule({{rule}}, 'delete');">Delete</a></li>
+            </ul>
+          </div>
+        </div>
+      {{/with}}
+    </script>
+    <!-- Rule Item -->
+    <script id="rules-table-nav-buttons-template" type="text/x-handlebars-template">
+      {{#with data}}
+        <div class="form-group">
+          <button type="button" class="btn btn-default" onclick="FB.rulebuilder.showRulesTable();">Back to Rules</button>
+          {{#if save}}<button type="button" class="btn btn-danger" onclick="FB.rulebuilder.saveRule();">Save Rule</button>{{/if}}
+          {{#if update}}<button type="button" class="btn btn-danger" onclick="FB.rulebuilder.updateRule({{rule}});">Update Rule</button>{{/if}}
+        </div>
+      {{/with}}
+    </script>
+    
+    <!-- Bootstrap 3 Templates -->
+    <!-- Text Input-->
+    <script id="textinput-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} {{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+            {{#with fields}}
+            <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label">{{label.value}}{{#if data-parsley-required.value}} *{{/if}}</label>
+            <div class="{{#if inputsize.selectedvalue}}col-sm-{{inputsize.selectedvalue}}{{else}}hide{{/if}}">
+                <input class="form-control input-md" id="{{id.value}}" name="{{id.value}}" type="text"{{#if placeholder.value}} placeholder="{{placeholder.value}}"{{/if}} {{#if tabindex.value}}tabindex="{{tabindex.value}}"{{/if}}{{#if data-parsley-required.value}} required="required"{{/if}}{{#if data-parsley-type.selectedvalue}} data-parsley-type="{{data-parsley-type.selectedvalue}}"{{/if}}{{#if data-parsley-pattern.value}} data-parsley-pattern="{{data-parsley-pattern.value}}"{{/if}}{{#if data-parsley-min.value}} data-parsley-min="{{data-parsley-min.value}}"{{/if}}{{#if data-parsley-max.value}} data-parsley-max="{{data-parsley-max.value}}"{{/if}}{{#if data-parsley-minlength.value}} data-parsley-minlength="{{data-parsley-minlength.value}}"{{/if}}{{#if data-parsley-maxlength.value}} data-parsley-maxlength="{{data-parsley-maxlength.value}}"{{/if}}{{#if data-parsley-group.value}} data-parsley-group="{{data-parsley-group.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}/>
+            </div>
+            {{#if helptext.value.length}}<div><span class="has-popover">
+                <span class="helptext" data-container="body" data-toggle="popover" data-placement="top" data-content="{{helptext.value}}" data-trigger="hover" data-original-title="{{helptitle.value}}">{{helplink.value}}</span>
+            </span></div>
+            {{/if}}
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Static Text -->
+    <script id="statictext-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}>
+            {{#with fields}}
+            <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label">{{label.value}}</label>
+            <div class="{{#if inputsize.selectedvalue}}col-sm-{{inputsize.selectedvalue}}{{else}}hide{{/if}}">
+                <div id="{{id.value}}" name="{{id.value}}" class="form-control-static{{#if class.value}} {{class.value}}{{/if}}"{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}>{{{text.value}}}</div>
+            </div>
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Text Input - Designer-->
+    <script id="hiddeninput-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+            {{#with fields}}
+            <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label"></label>
+            <div class="{{#if inputsize.selectedvalue}}col-sm-{{inputsize.selectedvalue}}{{/if}}">
+                <input class="form-control hidden-control input-md" id="{{id.value}}" name="{{id.value}}" type="text"{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}} value="{{value.value}}"/>
+            </div>
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    
+    <!-- Text Input - Preview-->
+    <script id="hiddeninput-preview-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div id="{{id}}" data-id="{{id}}"{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+            {{#with fields}}
+            <div>
+                <input class="form-control input-md" id="{{id.value}}" name="{{id.value}}" type="hidden"{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}} value="{{value.value}}"/>
+            </div>
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Date -->
+    <script id="dateinput-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+            {{#with fields}}
+            <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label">{{label.value}}{{#if data-parsley-required.value}} *{{/if}}</label>
+            <div class="{{#if inputsize.selectedvalue}}col-sm-{{inputsize.selectedvalue}}{{else}}hide{{/if}}">
+                <input id="{{id.value}}" name="{{id.value}}" type="text"{{#if placeholder.value}} placeholder="{{placeholder.value}}"{{/if}} class="form-control input-md datepicker{{#if constraint.selectedvalue}}{{constraint.selectedvalue}}{{/if}}" {{#if tabindex.value}}tabindex="{{tabindex.value}}"{{/if}}{{#if data-parsley-required.value}} required="required"{{/if}}{{#if data-parsley-type.selectedvalue}} data-parsley-type="{{data-parsley-type.selectedvalue}}"{{/if}}{{#if data-parsley-pattern.value}} data-parsley-pattern="{{data-parsley-pattern.value}}"{{/if}}{{#if data-parsley-min.value}} data-parsley-min="{{data-parsley-min.value}}"{{/if}}{{#if data-parsley-max.value}} data-parsley-max="{{data-parsley-max.value}}"{{/if}}{{#if data-parsley-minlength.value}} data-parsley-minlength="{{data-parsley-minlength.value}}"{{/if}}{{#if data-parsley-maxlength.value}} data-parsley-maxlength="{{data-parsley-maxlength.value}}"{{/if}}{{#if data-parsley-group.value}} data-parsley-group="{{data-parsley-group.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}/>
+                {{#if helptext.value.length}}<span class="help-block">{{helptext.value}}</span>{{/if}}
+            </div>
+            {{#if helptext.value.length}}<div><span class="has-popover">
+                <span class="helptext" data-container="body" data-toggle="popover" data-placement="top" data-content="{{helptext.value}}" data-trigger="hover" data-original-title="{{helptitle.value}}">{{helplink.value}}</span>
+            </span></div>
+            {{/if}}
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Password Input-->
+    <script id="passwordinput-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+            {{#with fields}}
+            <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label">{{label.value}}{{#if data-parsley-required.value}} *{{/if}}</label>
+            <div class="{{#if inputsize.selectedvalue}}col-sm-{{inputsize.selectedvalue}}{{else}}hide{{/if}}">
+                <input id="{{id.value}}" name="{{id.value}}" type="password"{{#if placeholder.value}} placeholder="{{placeholder.value}}"{{/if}} class="form-control input-md" {{#if tabindex.value}}tabindex="{{tabindex.value}}"{{/if}}{{#if data-parsley-required.value}} required="required"{{/if}}{{#if data-parsley-type.selectedvalue}} data-parsley-type="{{data-parsley-type.selectedvalue}}"{{/if}}{{#if data-parsley-pattern.value}} data-parsley-pattern="{{data-parsley-pattern.value}}"{{/if}}{{#if data-parsley-min.value}} data-parsley-min="{{data-parsley-min.value}}"{{/if}}{{#if data-parsley-max.value}} data-parsley-max="{{data-parsley-max.value}}"{{/if}}{{#if data-parsley-minlength.value}} data-parsley-minlength="{{data-parsley-minlength.value}}"{{/if}}{{#if data-parsley-maxlength.value}} data-parsley-maxlength="{{data-parsley-maxlength.value}}"{{/if}}{{#if data-parsley-group.value}} data-parsley-group="{{data-parsley-group.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}/>
+            </div>
+            {{#if helptext.value.length}}<div><span class="has-popover">
+                <span class="helptext" data-container="body" data-toggle="popover" data-placement="top" data-content="{{helptext.value}}" data-trigger="hover" data-original-title="{{helptitle.value}}">{{helplink.value}}</span>
+            </span></div>
+            {{/if}}
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Prepended text-->
+    <script id="prependedtext-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+            {{#with fields}}
+            <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label">{{label.value}}{{#if data-parsley-required.value}} *{{/if}}</label>
+            <div class="{{#if inputsize.selectedvalue}}col-sm-{{inputsize.selectedvalue}}{{else}}hide{{/if}}">
+                <div class="input-group">
+                    <div class="input-group-addon">{{prepend.value}}</div>
+                    <input id="{{id.value}}" name="{{id.value}}" type="text"{{#if placeholder.value}} placeholder="{{placeholder.value}}"{{/if}} class="form-control" {{#if tabindex.value}}tabindex="{{tabindex.value}}"{{/if}}{{#if data-parsley-required.value}} required="required"{{/if}}{{#if data-parsley-type.selectedvalue}} data-parsley-type="{{data-parsley-type.selectedvalue}}"{{/if}}{{#if data-parsley-pattern.value}} data-parsley-pattern="{{data-parsley-pattern.value}}"{{/if}}{{#if data-parsley-min.value}} data-parsley-min="{{data-parsley-min.value}}"{{/if}}{{#if data-parsley-max.value}} data-parsley-max="{{data-parsley-max.value}}"{{/if}}{{#if data-parsley-minlength.value}} data-parsley-minlength="{{data-parsley-minlength.value}}"{{/if}}{{#if data-parsley-maxlength.value}} data-parsley-maxlength="{{data-parsley-maxlength.value}}"{{/if}}{{#if data-parsley-group.value}} data-parsley-group="{{data-parsley-group.value}}" data-parsley-errors-container=".error-container-{{id.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}/></div>
+                <div class="error-container-{{id.value}}"></div>
+            </div>
+            {{#if helptext.value.length}}<div><span class="has-popover">
+                <span class="helptext" data-container="body" data-toggle="popover" data-placement="top" data-content="{{helptext.value}}" data-trigger="hover" data-original-title="{{helptitle.value}}">{{helplink.value}}</span>
+            </span></div>
+            {{/if}}
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Appended Input-->
+    <script id="appendedtext-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+            {{#with fields}}
+            <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label">{{label.value}}{{#if data-parsley-required.value}} *{{/if}}</label>
+            <div class="{{#if inputsize.selectedvalue}}col-sm-{{inputsize.selectedvalue}}{{else}}hide{{/if}}">
+                <div class="input-group">
+                    <input id="{{id.value}}" name="{{id.value}}" type="text"{{#if placeholder.value}} placeholder="{{placeholder.value}}"{{/if}} class="form-control" {{#if tabindex.value}}tabindex="{{tabindex.value}}"{{/if}}{{#if data-parsley-required.value}} required="required"{{/if}}{{#if data-parsley-type.selectedvalue}} data-parsley-type="{{data-parsley-type.selectedvalue}}"{{/if}}{{#if data-parsley-pattern.value}} data-parsley-pattern="{{data-parsley-pattern.value}}"{{/if}}{{#if data-parsley-min.value}} data-parsley-min="{{data-parsley-min.value}}"{{/if}}{{#if data-parsley-max.value}} data-parsley-max="{{data-parsley-max.value}}"{{/if}}{{#if data-parsley-minlength.value}} data-parsley-minlength="{{data-parsley-minlength.value}}"{{/if}}{{#if data-parsley-maxlength.value}} data-parsley-maxlength="{{data-parsley-maxlength.value}}"{{/if}}{{#if data-parsley-group.value}} data-parsley-group="{{data-parsley-group.value}}" data-parsley-errors-container=".error-container-{{id.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}/>
+                    <span class="input-group-addon">{{append.value}}</span>
+                </div>
+                <div class="error-container-{{id.value}}"></div>
+            </div>
+            {{#if helptext.value.length}}<div><span class="has-popover">
+                <span class="helptext" data-container="body" data-toggle="popover" data-placement="top" data-content="{{helptext.value}}" data-trigger="hover" data-original-title="{{helptitle.value}}">{{helplink.value}}</span>
+            </span></div>
+            {{/if}}
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Textarea -->
+    <script id="textarea-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+            {{#with fields}}
+            <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label">{{label.value}}{{#if data-parsley-required.value}} *{{/if}}</label>
+            <div class="{{#if inputsize.selectedvalue}}col-sm-{{inputsize.selectedvalue}}{{else}}hide{{/if}}">
+                <textarea id="{{id.value}}" name="{{id.value}}" rows="{{rows.value}}" class="form-control" {{#if tabindex.value}}tabindex="{{tabindex.value}}"{{/if}}{{#if data-parsley-required.value}} required="required"{{/if}}{{#if data-parsley-type.selectedvalue}} data-parsley-type="{{data-parsley-type.selectedvalue}}"{{/if}}{{#if data-parsley-pattern.value}} data-parsley-pattern="{{data-parsley-pattern.value}}"{{/if}}{{#if data-parsley-min.value}} data-parsley-min="{{data-parsley-min.value}}"{{/if}}{{#if data-parsley-max.value}} data-parsley-max="{{data-parsley-max.value}}"{{/if}}{{#if data-parsley-minlength.value}} data-parsley-minlength="{{data-parsley-minlength.value}}"{{/if}}{{#if data-parsley-maxlength.value}} data-parsley-maxlength="{{data-parsley-maxlength.value}}"{{/if}}{{#if data-parsley-group.value}} data-parsley-group="{{data-parsley-group.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}>{{textarea.value}}</textarea>
+            </div>
+            {{#if helptext.value.length}}<div><span class="has-popover">
+                <span class="helptext" data-container="body" data-toggle="popover" data-placement="top" data-content="{{helptext.value}}" data-trigger="hover" data-original-title="{{helptitle.value}}">{{helplink.value}}</span>
+            </span></div>
+            {{/if}}
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Text Input-->
+    <script id="alert-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}>
+            {{#with fields}}
+            <div class="alert {{type.selectedvalue}} {{#if dismissable.value}}alert-dismissable{{/if}}">
+              {{#if dismissable.value}}<a class="close" href="#" data-dismiss="alert" aria-hidden="true">&times;</a>{{/if}}
+              {{#if heading.value}}<div>{{{heading.value}}}</div>{{/if}}
+              <div>{{{text.value}}}</div>
+            </div>
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Text Input-->
+    <script id="panel-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div id="{{fields.id.value}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}>
+            {{#with fields}}
+            <div class="panel panel-{{type.selectedvalue}}">
+              <div class="panel-heading">{{{heading.value}}}</div>
+              <div class="panel-body">{{{body.value}}}</div>
+            </div>
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Multiple Radios -->
+    <script id="multipleradios-component-template" type="text/x-handlebars-template">
+        {{#with data}}
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+        {{#with fields}}
+        <label class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label" for="{{id.value}}">{{label.value}}{{#if data-parsley-required.value}} *{{/if}}</label>
+        <div class="col-sm-{{inputsize.selectedvalue}}">
+            {{#each radios.value}}
+            <div class="radio">
+                <label for="{{../id.value}}-{{itemid}}">
+                  <input type="radio" name="{{../id.value}}" id="{{../id.value}}-{{itemid}}" value="{{value}}" tabindex="{{../tabindex.value}}"{{#if checked}} checked="checked"{{/if}}{{#if data-parsley-required.value}} required="required"{{/if}}{{#if data-parsley-mincheck.value}} data-parsley-mincheck="{{data-parsley-mincheck.value}}" data-parsley-required="true"{{/if}}{{#if data-parsley-maxcheck.value}} data-parsley-maxcheck="{{data-parsley-maxcheck.value}}"{{/if}}{{#if data-parsley-group.value}} data-parsley-group="{{data-parsley-group.value}}" data-parsley-errors-container=".error-container-{{../../id.value}}"{{/if}}/>{{text}}</label>
+            </div>
+            {{/each}}
+            <div class="error-container-{{id.value}}"></div>
+        </div>
+        {{#if helptext.value.length}}<div><span class="has-popover">
+                <span class="helptext" data-container="body" data-toggle="popover" data-placement="top" data-content="{{helptext.value}}" data-trigger="hover" data-original-title="{{helptitle.value}}">{{helplink.value}}</span>
+            </span></div>
+            {{/if}}
+        {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Multiple Radios (inline) -->
+    <script id="multipleradiosinline-component-template" type="text/x-handlebars-template">
+        {{#with data}}
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+        {{#with fields}}
+        <label class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label" for="{{id.value}}">{{label.value}}{{#if data-parsley-required.value}} *{{/if}}</label>
+        <div class="col-sm-{{inputsize.selectedvalue}}">
+            {{#each radios.value}}
+            <label class="radio-inline" for="{{../id.value}}-{{itemid}}">
+              <input type="radio" name="{{../id.value}}" id="{{../id.value}}-{{itemid}}" value="{{value}}" tabindex="{{../tabindex.value}}"{{#if checked}} checked="checked"{{/if}}{{#if data-parsley-required.value}} required="required"{{/if}}{{#if data-parsley-mincheck.value}} data-parsley-mincheck="{{data-parsley-mincheck.value}}" data-parsley-required="true"{{/if}}{{#if data-parsley-maxcheck.value}} data-parsley-maxcheck="{{data-parsley-maxcheck.value}}"{{/if}}{{#if data-parsley-group.value}} data-parsley-group="{{data-parsley-group.value}}" data-parsley-errors-container=".error-container-{{../../id.value}}"{{/if}}/>{{text}}</label>
+            {{/each}}
+            <div class="error-container-{{id.value}}"></div>
+        </div>
+        {{#if helptext.value.length}}<div><span class="has-popover">
+                <span class="helptext" data-container="body" data-toggle="popover" data-placement="top" data-content="{{helptext.value}}" data-trigger="hover" data-original-title="{{helptitle.value}}">{{helplink.value}}</span>
+            </span></div>
+            {{/if}}
+        {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Multiple Checkboxes -->
+    <script id="multiplecheckboxes-component-template" type="text/x-handlebars-template">
+        {{#with data}}
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+        {{#with fields}}
+            <label class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label" for="{{id.value}}">{{label.value}}{{#if data-parsley-required.value}} *{{/if}}</label>
+            <div class="col-sm-{{inputsize.selectedvalue}}">
+                {{#each checkboxes.value}}
+                <div class="checkbox">
+                    <label for="{{../id.value}}-{{itemid}}">
+                      <input type="checkbox" name="{{../id.value}}" id="{{../id.value}}-{{itemid}}" value="{{value}}" tabindex="{{../tabindex.value}}"{{#if checked}} checked="checked"{{/if}}{{#if data-parsley-required.value}} required="required"{{/if}}{{#if data-parsley-mincheck.value}} data-parsley-mincheck="{{data-parsley-mincheck.value}}" data-parsley-required="true"{{/if}}{{#if data-parsley-maxcheck.value}} data-parsley-maxcheck="{{data-parsley-maxcheck.value}}"{{/if}}{{#if data-parsley-group.value}} data-parsley-group="{{data-parsley-group.value}}" data-parsley-errors-container=".error-container-{{../../id.value}}"{{/if}}/>{{text}}</label>
+                </div>
+                {{/each}}
+                <div class="error-container-{{id.value}}"></div>
+            </div>
+            {{#if helptext.value.length}}<div><span class="has-popover">
+                <span class="helptext" data-container="body" data-toggle="popover" data-placement="top" data-content="{{helptext.value}}" data-trigger="hover" data-original-title="{{helptitle.value}}">{{helplink.value}}</span>
+            </span></div>
+            {{/if}}
+        {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Multiple Checkboxes Inline -->
+    <script id="multiplecheckboxesinline-component-template" type="text/x-handlebars-template">
+        {{#with data}}
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+        {{#with fields}}
+        <label class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label" for="{{id.value}}">{{label.value}}{{#if data-parsley-required.value}} *{{/if}}</label>
+        <div class="col-sm-{{inputsize.selectedvalue}}">
+            {{#each checkboxes.value}}
+            <label class="checkbox-inline" for="{{../id.value}}-{{itemid}}">
+              <input type="checkbox" name="{{../id.value}}" id="{{../id.value}}-{{itemid}}" value="{{value}}" tabindex="{{../tabindex.value}}"{{#if checked}} checked="checked"{{/if}}{{#if data-parsley-required.value}} required="required"{{/if}}{{#if data-parsley-mincheck.value}} data-parsley-mincheck="{{data-parsley-mincheck.value}}" data-parsley-required="true"{{/if}}{{#if data-parsley-maxcheck.value}} data-parsley-maxcheck="{{data-parsley-maxcheck.value}}"{{/if}}{{#if data-parsley-group.value}} data-parsley-group="{{data-parsley-group.value}}" data-parsley-errors-container=".error-container-{{../../id.value}}"{{/if}}/>{{text}}</label>
+            {{/each}}
+            <div class="error-container-{{id.value}}"></div>
+        </div>
+        {{#if helptext.value.length}}<div><span class="has-popover">
+                <span class="helptext" data-container="body" data-toggle="popover" data-placement="top" data-content="{{helptext.value}}" data-trigger="hover" data-original-title="{{helptitle.value}}">{{helplink.value}}</span>
+            </span></div>
+            {{/if}}
+        {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    
+    <!-- Select Basic -->
+    <script id="selectbasic-component-template" type="text/x-handlebars-template">
+        {{#with data}}
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+            {{#with fields}}
+            <label class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label" for="{{id.value}}">{{label.value}}{{#if data-parsley-required.value}} *{{/if}}</label>
+            <div class="{{#if inputsize.selectedvalue}}col-sm-{{inputsize.selectedvalue}}{{else}}hide{{/if}}"> 
+                <select class="form-control" id="{{id.value}}" name="{{id.value}}" {{#if tabindex.value}}tabindex="{{tabindex.value}}"{{/if}}{{#if data-parsley-required.value}} data-parsley-required="true"{{/if}}{{#if data-parsley-type.selectedvalue}} data-parsley-type="{{data-parsley-type.selectedvalue}}"{{/if}}{{#if data-parsley-pattern.value}} data-parsley-pattern="{{data-parsley-pattern.value}}"{{/if}}{{#if data-parsley-min.value}} data-parsley-min="{{data-parsley-min.value}}"{{/if}}{{#if data-parsley-max.value}} data-parsley-max="{{data-parsley-max.value}}"{{/if}}{{#if data-parsley-minlength.value}} data-parsley-minlength="{{data-parsley-minlength.value}}"{{/if}}{{#if data-parsley-maxlength.value}} data-parsley-maxlength="{{data-parsley-maxlength.value}}"{{/if}}{{#if data-parsley-group.value}} data-parsley-group="{{data-parsley-group.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}>
+                    {{#each options.value}}
+                    <option value="{{value}}"{{#if selected}} selected="selected"{{/if}}>{{text}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            {{#if helptext.value.length}}<div><span class="has-popover">
+                <span class="helptext" data-container="body" data-toggle="popover" data-placement="top" data-content="{{helptext.value}}" data-trigger="hover" data-original-title="{{helptitle.value}}">{{helplink.value}}</span>
+            </span></div>
+            {{/if}}
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Select Multiple -->
+    <script id="selectmultiple-component-template" type="text/x-handlebars-template">
+        {{#with data}}
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>
+            {{#with fields}}
+            <label class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label" for="{{id.value}}">{{label.value}}</label>
+            <div class="{{#if inputsize.selectedvalue}}col-sm-{{inputsize.selectedvalue}}{{else}}hide{{/if}}"> 
+                <select multiple class="form-control" id="{{id.value}}" name="{{id.value}}"{{#if tabindex.value}} tabindex="{{tabindex.value}}"{{/if}}{{#if data-parsley-required.value}} required{{/if}}{{#if data-parsley-type.selectedvalue}} data-parsley-type="{{data-parsley-type.selectedvalue}}"{{/if}}{{#if data-parsley-pattern.value}} data-parsley-pattern="{{data-parsley-pattern.value}}"{{/if}}{{#if data-parsley-min.value}} data-parsley-min="{{data-parsley-min.value}}"{{/if}}{{#if data-parsley-max.value}} data-parsley-max="{{data-parsley-max.value}}"{{/if}}{{#if data-parsley-minlength.value}} data-parsley-minlength="{{data-parsley-minlength.value}}"{{/if}}{{#if data-parsley-maxlength.value}} data-parsley-maxlength="{{data-parsley-maxlength.value}}"{{/if}}{{#if data-parsley-group.value}} data-parsley-group="{{data-parsley-group.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}>
+                    {{#each options.value}}
+                    <option value="{{value}}"{{#if selected}} selected="selected"{{/if}}>{{text}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            {{#if helptext.value.length}}<div><span class="has-popover">
+                <span class="helptext" data-container="body" data-toggle="popover" data-placement="top" data-content="{{helptext.value}}" data-trigger="hover" data-original-title="{{helptitle.value}}">{{helplink.value}}</span>
+            </span></div>
+            {{/if}}
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Action Button -->
+    <script id="actionbutton-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}>
+            {{#with fields}}
+            <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label">{{label.value}}</label>
+            <div class="{{#if buttonsize.selectedvalue}}col-sm-{{buttonsize.selectedvalue}}{{else}}col-sm-6{{/if}}">
+                <button id="{{id.value}}" name="{{id.value}}" class="btn {{buttontype.selectedvalue}}{{#if buttonsize.selectedvalue}} col-sm-12{{/if}}" data-action="{{buttonaction.value}}"{{#if tabindex.value}} tabindex="{{tabindex.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}>{{buttonlabel.value}}</button>
+            </div>
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    
+    <!-- Action Button : Preview Mode -->
+    <script id="actionbutton-preview-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}>
+            {{#with fields}}
+            <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label">{{label.value}}</label>
+            <div class="{{#if buttonsize.selectedvalue}}col-sm-{{buttonsize.selectedvalue}}{{else}}col-sm-6{{/if}}">
+                <button id="{{id.value}}" name="{{id.value}}" class="btn {{buttontype.selectedvalue}}{{#if buttonsize.selectedvalue}} col-sm-12{{/if}}"{{#if tabindex.value}} tabindex="{{tabindex.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}{{#if buttonaction.value}} onclick="{{buttonaction.value}};"{{/if}}>{{buttonlabel.value}}</button>
+            </div>
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Calc Button -->
+    <script id="calcbutton-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}>
+            {{#with fields}}
+            <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label">{{label.value}}</label>
+            <div class="{{#if buttonsize.selectedvalue}}col-sm-{{buttonsize.selectedvalue}}{{else}}col-sm-6{{/if}}">
+                <button id="{{id.value}}" name="{{id.value}}" class="btn {{buttontype.selectedvalue}}{{#if buttonsize.selectedvalue}} col-sm-12{{/if}}" data-action="calc.calculate({model: '{{calcmodel.value}}', url: '{{calcurl.value}}', proxy: '{{calcproxy.value}}', successurl: '{{calcsuccessurl.value}}'});"{{#if tabindex.value}} tabindex="{{tabindex.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}>{{buttonlabel.value}}</button>
+            </div>
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    
+    <!-- Calc Button : Preview Mode -->
+    <script id="calcbutton-preview-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}>
+            {{#with fields}}
+            <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label">{{label.value}}</label>
+            <div class="{{#if buttonsize.selectedvalue}}col-sm-{{buttonsize.selectedvalue}}{{else}}col-sm-6{{/if}}">
+                <button id="{{id.value}}" name="{{id.value}}" class="btn {{buttontype.selectedvalue}}{{#if buttonsize.selectedvalue}} col-sm-12{{/if}}"{{#if tabindex.value}} tabindex="{{tabindex.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}{{#if calcmodel.value}} onclick="calc.calculate({model: '{{calcmodel.value}}', url: '{{calcurl.value}}', proxy: '{{calcproxy.value}}', successurl: '{{calcsuccessurl.value}}'});"{{/if}}>{{buttonlabel.value}}</button>
+            </div>
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Calc Button -->
+    <script id="calcbuttonv2-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}>
+            {{#with fields}}
+            <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label">{{label.value}}</label>
+            <div class="{{#if buttonsize.selectedvalue}}col-sm-{{buttonsize.selectedvalue}}{{else}}col-sm-6{{/if}}">
+                <button id="{{id.value}}" name="{{id.value}}" class="btn {{buttontype.selectedvalue}}{{#if buttonsize.selectedvalue}} col-sm-12{{/if}}" data-action="calc2.calculate({model: '{{calcmodel.value}}', url: '{{calcurl.value}}', environment: '{{calcenvironment.value}}', user: '{{user.value}}', pass: '{{password.value}}', proxy: '{{calcproxy.value}}', successurl: '{{calcsuccessurl.value}}'});"{{#if tabindex.value}} tabindex="{{tabindex.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}>{{buttonlabel.value}}</button>
+            </div>
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    
+    <!-- Calc Button : Preview Mode -->
+    <script id="calcbuttonv2-preview-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}>
+            {{#with fields}}
+            <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label">{{label.value}}</label>
+            <div class="{{#if buttonsize.selectedvalue}}col-sm-{{buttonsize.selectedvalue}}{{else}}col-sm-6{{/if}}">
+                <button id="{{id.value}}" name="{{id.value}}" class="btn {{buttontype.selectedvalue}}{{#if buttonsize.selectedvalue}} col-sm-12{{/if}}"{{#if tabindex.value}} tabindex="{{tabindex.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}{{#if calcmodel.value}} onclick="calc2.calculate({model: '{{calcmodel.value}}', url: '{{calcurl.value}}', environment: '{{calcenvironment.value}}', user: '{{user.value}}', pass: '{{password.value}}', proxy: '{{calcproxy.value}}', successurl: '{{calcsuccessurl.value}}'});"{{/if}}>{{buttonlabel.value}}</button>
+            </div>
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Action Button -->
+    <script id="inputbutton-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}>
+            {{#with fields}}
+            <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label">{{label.value}}</label>
+            <div class="{{#if inputsize.selectedvalue}}col-sm-{{inputsize.selectedvalue}}{{/if}}">
+                <div class="input-group">
+                    <input class="form-control input-md" id="{{id.value}}" name="{{id.value}}" type="text"{{#if placeholder.value}} placeholder="{{placeholder.value}}"{{/if}} {{#if tabindex.value}}tabindex="{{tabindex.value}}"{{/if}}{{#if data-parsley-required.value}} required="required"{{/if}}{{#if data-parsley-type.selectedvalue}} data-parsley-type="{{data-parsley-type.selectedvalue}}"{{/if}}{{#if data-parsley-pattern.value}} data-parsley-pattern="{{data-parsley-pattern.value}}"{{/if}}{{#if data-parsley-min.value}} data-parsley-min="{{data-parsley-min.value}}"{{/if}}{{#if data-parsley-max.value}} data-parsley-max="{{data-parsley-max.value}}"{{/if}}{{#if data-parsley-minlength.value}} data-parsley-minlength="{{data-parsley-minlength.value}}"{{/if}}{{#if data-parsley-maxlength.value}} data-parsley-maxlength="{{data-parsley-maxlength.value}}"{{/if}}{{#if data-parsley-group.value}} data-parsley-group="{{data-parsley-group.value}}"{{/if}}/>
+                    <span class="input-group-btn">
+                        <button class="btn {{buttontype.selectedvalue}}" type="button" onclick="{{buttonaction.value}}"{{#if tabindex.value}} tabindex="{{tabindex.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}>{{buttonlabel.value}}</button>
+                    </span>
+                </div>
+            </div>
+            {{#if helptext.value.length}}<div><span class="has-popover">
+                <span class="helptext" data-container="body" data-toggle="popover" data-placement="top" data-content="{{helptext.value}}" data-trigger="hover" data-original-title="{{helptitle.value}}">{{helplink.value}}</span>
+            </span></div>{{/if}}
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    
+    
+    <script id="inputbutton-preview-component-template" type="text/x-handlebars-template">
+        {{#with data}}           
+        <div class="form-group" id="{{id}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.columnheading.value}} data-colshow="{{fields.columnheading.value}}"{{/if}}{{#if fields.columndata.value}} data-coldata="{{fields.columndata.value}}"{{/if}}>
+            {{#with fields}}
+            <label for="{{id.value}}" class="{{#if labelsize.selectedvalue}}col-sm-{{labelsize.selectedvalue}}{{else}}hide{{/if}} control-label">{{label.value}}</label>
+            <div class="{{#if inputsize.selectedvalue}}col-sm-{{inputsize.selectedvalue}}{{/if}}">
+                <div class="input-group">
+                    <input class="form-control input-md" id="{{id.value}}" name="{{id.value}}" type="text"{{#if placeholder.value}} placeholder="{{placeholder.value}}"{{/if}} {{#if tabindex.value}}tabindex="{{tabindex.value}}"{{/if}}{{#if data-parsley-required.value}} required="required"{{/if}}{{#if data-parsley-type.selectedvalue}} data-parsley-type="{{data-parsley-type.selectedvalue}}"{{/if}}{{#if data-parsley-pattern.value}} data-parsley-pattern="{{data-parsley-pattern.value}}"{{/if}}{{#if data-parsley-min.value}} data-parsley-min="{{data-parsley-min.value}}"{{/if}}{{#if data-parsley-max.value}} data-parsley-max="{{data-parsley-max.value}}"{{/if}}{{#if data-parsley-minlength.value}} data-parsley-minlength="{{data-parsley-minlength.value}}"{{/if}}{{#if data-parsley-maxlength.value}} data-parsley-maxlength="{{data-parsley-maxlength.value}}"{{/if}}{{#if data-parsley-group.value}} data-parsley-group="{{data-parsley-group.value}}"{{/if}}/>
+                    <span class="input-group-btn">
+                        <button class="btn {{buttontype.selectedvalue}}" type="button" {{#if tabindex.value}} tabindex="{{tabindex.value}}"{{/if}}{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}}{{#if buttonaction.value}} onclick="{{buttonaction.value}};"{{/if}}>{{buttonlabel.value}}</button>
+                    </span>
+                </div>
+            </div>
+            {{#if helptext.value.length}}<div><span class="has-popover">
+                <span class="helptext" data-container="body" data-toggle="popover" data-placement="top" data-content="{{helptext.value}}" data-trigger="hover" data-original-title="{{helptitle.value}}">{{helplink.value}}</span>
+            </span></div>{{/if}}
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>        
+    <!-- Table -->
+    <script id="table-component-template" type="text/x-handlebars-template">
+        {{#with data}}   
+        <div class="table-responsive" id="{{fields.id.value}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.showidcol.value}} data-idcol="true"{{/if}}>        
+            <table class="table{{#if fields.bordered.value}} table-bordered{{/if}}{{#if fields.striped.value}} table-striped{{/if}}">
+                {{#with fields}} 
+                <thead>
+                    <tr>
+                        {{#each headings.value}}
+                        <th>{{text}}</th>
+                        {{/each}}
+                    </tr>
+                </thead>
+                {{/with}}
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        {{/with}}
+    </script>
+    
+    <!-- Table Group-->
+    <script id="tablegroup-component-template" type="text/x-handlebars-template">
+        {{#with data}}   
+        <div class="table-group" id="{{fields.id.value}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.showidcol.value}} data-idcol="true"{{/if}}{{#if fields.data-event-integration.value}} data-integration="{{fields.data-event-integration.value}}"{{/if}}>        
+            <table class="table{{#if fields.bordered.value}} table-bordered{{/if}}{{#if fields.striped.value}} table-striped{{/if}}">
+                {{#with fields}} 
+                <thead>
+                    <tr>
+                        {{#each headings.value}}
+                        <th>{{text}}</th>
+                        {{/each}}
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="table-group-items dropzone"></div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label"></label>
+                <div class="col-sm-8">
+                    <button class="btn btn-danger" data-mode="add" data-label="{{buttonlabel.value}}" data-closedlabel="{{buttonclosedlabel.value}}"{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}} onclick="FBRun.tablegroup.btnAction($(this), {{../id}});">{{buttonlabel.value}}</button>
+                </div>
+            </div>
+            {{/with}}
+        {{/with}}
+        </div>
+    </script>
+    
+    <!-- Table Group (Preview)-->
+    <script id="tablegroup-preview-component-template" type="text/x-handlebars-template">
+        {{#with data}}   
+        <div class="table-group" id="{{fields.id.value}}" data-id="{{id}}"{{#if fields.data-vis.selectedvalue}} data-vis="{{fields.data-vis.selectedvalue}}"{{/if}}{{#if fields.showidcol.value}} data-idcol="true"{{/if}}>        
+            <table class="table{{#if fields.bordered.value}} table-bordered{{/if}}{{#if fields.striped.value}} table-striped{{/if}} hide">
+                {{#with fields}} 
+                <thead>
+                    <tr>
+                        {{#each headings.value}}
+                        <th>{{text}}</th>
+                        {{/each}}
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                
+            </table>
+    
+            <div class="table-group-items"></div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label"></label>
+                <div class="col-sm-8">
+                    <button class="btn btn-danger" data-mode="add" data-label="{{buttonlabel.value}}" data-closedlabel="{{buttonclosedlabel.value}}"{{#if data-event-name.value}} data-event-name="{{data-event-name.value}}"{{/if}}{{#if data-event-type.selectedvalue}} data-event-type="{{data-event-type.selectedvalue}}"{{/if}}{{#if data-event-model.selectedvalue}} data-event-model="{{data-event-model.selectedvalue}}"{{/if}} onclick="FBRun.tablegroup.btnAction($(this), {{../id}});">{{buttonlabel.value}}</button>
+                </div>
+            </div>
+            {{/with}}
+        </div>
+        {{/with}}
+    </script>
+    <!-- Text Input-->
+    <script id="tablegroup-actions-template" type="text/x-handlebars-template">
+        {{#with data}}   
+        <td>
+          <div class="btn-group">
+            <button type="button" class="btn btn-default">Action</button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#" onclick="editTGRow({{row}})">Edit</a></li>
+              <li><a href="#" onclick="deleteTGRow({{row}})">Delete</a></li>
+            </ul>
+          </div>
+        </td>
+        {{/with}}
+    </script>
+    <!-- Progress bar -->
+    <script id="progress-template" type="text/x-handlebars-template">
+        {{#with data}} 
+        <div id="progress" class="col-sm-4">
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{value}}" aria-valuemin="0" aria-valuemax="100" style="width: {{value}}%">
+                    <span class="sr-only">{{value}}% Complete</span>
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </script>
+    
+    <script src="js/libs/jquery-1.11.1.min.js"></script>
+    <script src="assets/ace/ace.js" charset="utf-8"></script>
+    <script src="js/main.min.3e561b49.js"></script>
+    <script src="js/formbuilder.min.a529edd7.js"></script>
+    
+</body>
+</html>

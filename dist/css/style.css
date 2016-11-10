@@ -1,0 +1,640 @@
+/* Set page to full height */
+#p16 .fb-form{
+	padding-top: 200px;
+}
+
+#p16 button {
+	height: 5em;
+	margin-bottom: 1em;
+}
+
+html {
+	height: 100%;
+}
+body {
+	/* margin-top: 40px; */
+	height:100%;
+}
+
+body.fb-body {
+	margin-top: 0;
+	height:100%;
+	/* background-color: #f1f1f1; 
+	background-image: url('images/debut_light.png'); */
+}
+
+pre {
+	margin: 0px !important;
+}
+
+.fb-wrapper {
+	margin: 0;
+	min-height: 100%;
+}
+
+.fb-container {
+	margin-right: 0px;
+	margin-left: 0px;
+	padding: 0px;
+}
+
+.form-fb {
+	min-height:100%;
+}
+
+.container {
+	background-color: #fff;
+}
+
+.container-form {
+	border-left: 1px solid #f1f1f1;
+	border-right: 1px solid #f1f1f1;
+	min-height: 100%;
+	/* -webkit-box-shadow: 0px 0px 20px 5px rgba(51,51,51,0.3);
+	-moz-box-shadow: 0px 0px 20px 5px rgba(51,51,51,0.3);
+	box-shadow: 0px 0px 20px 5px rgba(51,51,51,0.3); */
+}
+
+.page {
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+.navbar-spacer {
+	display: inline-block;
+	width: 40px;
+}
+
+.navbar-buttons-right {
+	display: inline-block;
+}
+
+.tab-content, .tab-pane {
+	height: 100% !important;	/* Needed to allow the custom fields pre control to size below */
+}
+
+#custom-fields {
+	height: 80%;
+}
+
+@media (min-width: 1200px) {
+	.navbar-buttons-right {
+		/* float:right; */
+	}
+}
+
+.modal-wide {
+	width: 1000px;
+}
+
+.scrollable {
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+#html-editor-background {
+	padding: 100px 15px 0 15px;
+}
+
+.html-editor {
+	position: absolute;
+	width: 100%;
+}
+
+.margin-top-15 {
+	margin-top: 15px;
+}
+
+.logo {
+	background-color: #f5f5f5;
+	border-bottom: 1px solid #e2e2e2;
+	background-image: url('images/shelter-logo.png');
+	background-repeat: no-repeat;
+	height: 80px;
+	margin-left: -15px;
+	margin-right: -15px;
+	padding: 10px;
+}
+
+#footer {
+	width:100%;
+	height:80px;
+	/* position:absolute; */	/* NOTE: this will fix to the bottom */;
+	bottom:0;
+	left:0;
+}
+
+.footer {
+	padding: 30px 15px 0 15px;
+	background-color: #3f3f3f;
+}
+
+.footer p{
+	color:#999;
+}
+
+#left-pane, #right-pane {
+	background:#f1f1f1;
+}
+#left-pane {
+	border-right: 1px solid #e2e2e2;
+}
+#right-pane {
+	border-left: 1px solid #e2e2e2;
+}
+
+#content .panel-content {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#form-html, #content, #rulebuilder {
+	-webkit-transition: all 0.33s linear 0s;
+	 transition: all 0.33s linear 0s;
+}
+
+#rulebuilder {
+	margin-left: 5em;
+	margin-right: 5em;
+}
+@media (min-width: 1200px) {
+	#rulebuilder {
+		margin-left: 10em;
+		margin-right: 10em;
+	}
+}
+
+p.rule-message {
+	font-size: 5em;
+	padding: 2em 0;
+	text-align: center;
+	color: #ddd;
+}
+
+.rule-error {
+	padding: 10px;
+	font-size: 0.8em;
+	clear: both;
+}
+
+#form-zone {
+/*	border:1px solid #f1f1f1;
+	padding: 15px;*/
+}
+
+#code-view { 
+	height: 100%;	/* Was 500px */
+}
+
+#rule-expression { 
+	height: 300px;
+	border: 1px solid #e2e2e2;
+	background-color: #f9f9f9;
+	padding: 10px;
+	margin-bottom:15px;
+}
+
+.version-update {
+	color: blue !important;
+	text-decoration: underline;
+}
+
+.datatable {
+	width: 100% !important;
+}
+
+th.table-header { 
+    background-image: url(images/bg.gif); 
+    cursor: pointer; 
+    background-repeat: no-repeat; 
+    background-position: center left; 
+    padding-left: 20px !important; 
+}
+
+th.headerSortUp { 
+    background-image: url(images/asc.gif); 
+} 
+
+th.headerSortDown { 
+    background-image: url(images/desc.gif); 
+} 
+
+span.expression {
+	margin: 0 5px 0 5px;
+}
+
+#page-select div {
+	padding-top: 24px;
+}
+
+.properties-pane{
+	padding-top:20px;
+	background-color: #fff;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding: 10px;
+}
+
+.properties-pane .form-group {
+	margin-bottom: 5px;
+}
+
+.label-sm {
+	font-size: 12px;
+	line-height: 14px;
+}
+
+/* Dropzones */
+.dropzone{
+	min-height: 5em;
+	padding-top: 16px;
+    border: 1px dashed #e2e2e2;
+	/*border: 1px solid #e2e2e2;
+	border-radius: 3px;
+	padding-top: 16px;
+	z-index: 5; */
+}
+.dropzone.over{
+	/* background-color: #FFFDD6; */
+	border: 1px dashed #ccc;
+}
+
+/* Tables */
+.table-group {
+	margin-bottom: 15px;
+}
+
+.table-group td{
+	vertical-align: middle !important;
+}
+
+ul.parsley-errors-list {
+    display:inline-block;
+}
+
+.has-popover {
+	display: block;
+/* 	width: 100%; */
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #555;
+}
+
+.helptext {
+	border-bottom: 1px #555 dotted;
+}
+
+.showvis {
+	border: 1px solid #ebccd1;
+	background-color: #f2dede;
+}
+
+.show-tab {
+	position: absolute;
+	padding: 10px;
+}
+
+/* Panels */
+.alert-default {
+	background-color: #F7F7F9;
+	border-color: #F5F5F5;
+	color: #333;
+}
+
+.panel-blue {
+	background-color: #D9EDF7;
+	border: 1px solid #BCE8F1;
+	padding:10px;
+}
+
+/* Navigation */
+#progress {
+	padding: 20px 0 20px 0;
+	border-bottom: 1px solid #e2e2e2;
+	background-color: #f9f9f9;
+}
+
+.nav-progress {
+	padding: 0;
+}
+
+.nav-progress>li {
+	position: relative;
+	display: block;
+	float: left;
+	border: 1px solid #f9f9f9;
+}
+
+.nav-progress>li>a, .nav-progress>li>a:active, .nav-progress>li>a:hover {
+	display: block;
+	padding: 5px 10px 5px 10px;
+	text-decoration: none;
+}
+
+.nav-progress>li>a:hover {
+	background-color: #f9f9f9;
+}
+
+.nav-progress>li.active>a {
+	background-color: #2a6496;
+	color: #fff;
+}
+
+h2.labels {
+	margin: 0px -15px 0px -15px;
+}
+
+.no-padding-left {
+	padding-left: 0px;
+}
+.no-padding-right {
+	padding-right: 0px;
+}
+.margin-bottom {
+	margin-bottom: 10px;
+}
+
+td.white {
+	background-color: white;
+}
+
+h2.step-title {
+	text-align: center;
+	margin: 0 0 40px 0;
+	padding: 10px 0 10px 0;
+	background-color: #5D9CEC;
+	color: #fff;
+}
+
+textarea#html {
+	border: 1px solid #e2e2e2;
+	padding:20px;
+	font-family: monospace;
+}
+
+/* Toolbox */
+.toolbox {
+	margin-bottom:10px;
+}
+
+.tool {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	/* Required to make elements draggable in old WebKit */
+	-khtml-user-drag: element;
+	-webkit-user-drag: element;
+}
+
+.tool:hover {
+	cursor: move;
+}
+.tool span{
+	width:100%;
+}
+
+.tool p, .tool p:hover {
+	margin: 0px;
+	padding: 2px 5px;
+}
+
+.tool p { border: 1px solid transparent; }
+
+.tool p:hover { 
+	border: 1px solid #ddd;
+	background-color: #eee; 
+}
+
+.placeholder{
+	height: 5em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.over {
+  background-color: #e2e2e2;
+}
+
+.code{
+	height: 100%;
+}
+
+table .form-group{
+	margin-bottom: 0px;
+}
+
+.hidden-control {
+	border-style: dashed !important;
+}
+
+#menu {
+    display: none;
+    position: absolute;
+    padding: 0;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    width:200px;
+}
+#menu ul{
+	padding: 1px;
+	list-style-type: none;
+}
+#menu li{
+}
+#menu a{
+	display: block;
+	width: 100%;
+	line-height: 2em;
+	padding: 5px;
+}
+#menu a:hover{
+	text-decoration: none;
+	background-color: #e6e6e6;
+}
+
+.nav-buttons{
+	margin-top: 40px;
+	padding: 20px 0 20px 0px;
+}
+
+.spinner-container {
+  z-index: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -25px;
+}
+
+span.parsley-required {
+	padding-left: 15px;
+}
+
+.dropdown-menu {
+	background-color: #fff !important;
+}
+
+.alert {
+	margin: 0 20px 0 20px !important;
+}
+
+.btn-bug {
+	float: right;
+}
+
+/* === Sidenav ================================================================== */
+.sidenav {
+	list-style-type: none;
+	padding-left: 0;
+	width: 100% !important;
+	margin-top: 30px !important;
+	background-color: #F5F5F5;
+}
+
+/* .sidenav, .affix, .affix-top {
+	width:200px !important;
+} */
+
+/*.affix, .affix-top {
+	position: fixed;
+}*/
+
+.sidenav>li>a {
+	position: relative;
+	display: block;
+	color: #999;
+	padding: 5px 15px 5px 15px;
+	text-decoration: none;
+	border-left:2px solid #F5F5F5;
+	border-bottom: 1px solid #F5F5F5;
+}
+
+.sidenav>li.active>a, .sidenav>li.active>a:hover, .sidenav>li.active>a:focus {
+	color: #222;
+	border-left:2px solid #222;
+	border-bottom: 1px solid #e2e2e2;
+	background-color: #e2e2e2
+}
+
+.sidenav>li.disabled>a, .sidenav>li.disabled>a:hover, .sidenav>li.disabled>a:focus {
+	color: #999;
+	border-left:2px solid #F5F5F5;
+}
+
+.sidenav>li>a:hover, .sidenav>li>a:focus {
+	color: #666;
+	border-left:2px solid #666;
+}
+
+/* ===================================================================== */
+.nav-pills {
+	padding: 20px 0 20px 0;
+}
+
+.nav-pills-container {
+	background-color: #333;
+	height: 100vh;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+	background-color: #999;
+}
+
+.nav-pills>li>a {
+	color: #999;
+	padding: 5px 15px 5px 15px;
+}
+
+/* === Static Text Classes ================================================================== */
+.header {
+	font-size: 2em;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.huge {
+	font-size: 3em;
+}
+
+.subhead {
+	font-size: 1.6em;
+}
+
+.red { color: #DA4453; }
+
+.blue-jeans-darker { color: #5D9CEC; }
+.blue-jeans { color: #4A89DC; }
+.aqua-darker { color: #4FC1E9; }
+.aqua { color: #3BAFDA; }
+.mint-darker { color: #48CFAD; }
+.mint { color: #37BC9B; }
+.grass-darker { color: #A0D468; }
+.grass { color: #8CC152; }
+.sunflower-darker { color: #FFCE54; }
+.sunflower { color: #F6BB42; }
+.bittersweet-darker { color: #FC6E51; }
+.bittersweet { color: #E9573F; }
+.grapefruit-darker { color: #ED5565; }
+.grapefruit { color: #DA4453; }
+.lavender-darker { color: #AC92EC; }
+.lavender { color: #967ADC; }
+.pink-rose-darker { color: #EC87C0; }
+.pink-rose { color: #D770AD; }
+.light-gray-darker { color: #F5F7FA; }
+.light-gray { color: #E6E9ED; }
+.medium-gray-darker { color: #CCD1D9; }
+.medium-gray { color: #AAB2BD; }
+.dark-gray-darker { color: #656D78; }
+.dark-gray { color: #434A54; }
+
+/* === Page breaks ======================================================================== */
+
+@media all {
+	.page-break	{ display: none; }
+}
+
+@media print {
+	.page-break	{ display: block; page-break-before: always; }
+}
+
+/* === MEDIA QUERIES ======================================================================== */
+
+/* Force full width on large screens */
+/* Huge Display */
+@media (min-width: 1200px) {
+	/* Fix for container max width of 960px */
+	.container {
+	   max-width: 100%;
+	   width: 100% !important;
+	 }
+
+	.form-nav-buttons{
+		padding: 20px 0 20px 10px;
+	}
+
+	span.parsley-required {
+		padding-left: 0;
+	}
+}
+
+/* Desktop */
+@media (min-width: 980px) {
+	.container {
+	   max-width: 100%;
+	   width: 100% !important;
+	 } 
+
+	.form-nav-buttons{
+		padding: 20px 0 20px 10px;
+	}
+
+	span.parsley-required {
+		padding-left: 0;
+	}
+}
